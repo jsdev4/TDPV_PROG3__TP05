@@ -14,11 +14,13 @@ var velocity = Vector2()
 var on_air_time = 1
 var jumping = false
 var jump_curve = PoolVector2Array()
-signal im_dead
+
 var flipped=Vector2()
 #var color_to_change=Color()
-
+var lifes
+#var Pos setget setPos, getPos
 func _ready():
+	lifes=1
 	flipped.y=0
 	emit_signal("draw")
 	#color_to_change=Color(1,1,1,1)
@@ -110,3 +112,10 @@ func _set_jump_speed(js):
 	calculate_jump_curve()
 	update()
 	
+
+func _on_Area2D_body_entered(body):
+	pass # Replace with function body.
+	
+func _respawn():
+	position.x=230
+	position.y=230
