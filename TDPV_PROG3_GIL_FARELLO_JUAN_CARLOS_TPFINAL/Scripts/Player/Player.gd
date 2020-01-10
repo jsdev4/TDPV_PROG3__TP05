@@ -119,3 +119,6 @@ func _on_Area2D_body_entered(body):
 func _respawn():
 	position.x=230
 	position.y=230
+func _has_finished_the_level():
+	get_tree().reload_current_scene()
+	#reiniciar es a modo de testeo

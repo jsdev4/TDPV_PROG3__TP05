@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://water_scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Water/water_script.gd" type="Script" id=2]
@@ -6,11 +6,13 @@
 [ext_resource path="res://Assets/Level_on_tiles/level_0.tmx" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Images/dummy_for_test.png" type="Texture" id=6]
+[ext_resource path="res://ExitLevel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/ExitLevel/exit_script.gd" type="Script" id=8]
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 502.219, 122.343 )
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=2]
 0/name = "b88de1b111daedfce7da2198ad4e4917.jpg 0"
 0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
@@ -22,61 +24,61 @@ extents = Vector2( 502.219, 122.343 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 57.0091, 193.305 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 60.3093, 29.5881 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 158.774, 31.9767 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 94.6968, 32.4562 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 31.339, 30.7986 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 159.563, 29.0413 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 124.555, 29.5862 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 253.616, 29.5649 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 187.931, 33.7282 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 89.0205, 30.2363 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 222.337, 30.4095 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 219.453, 30.3182 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 127.427, 31.9388 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 544.818, 28.3384 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 123.524, 30.375 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 93.4668, 27.655 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 63.4248, 33.2055 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 27.6846, 31.643 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 35.79, 49.6313 )
 
 [node name="Node2D" type="Node2D"]
@@ -90,19 +92,17 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D_water/Area2D"]
 position = Vector2( 19.0535, 44.6952 )
-shape = SubResource( 21 )
+shape = SubResource( 1 )
 
 [node name="TileMap_for_level" type="TileMap" parent="."]
-editor/display_folded = true
 position = Vector2( 41.2534, -4.76001 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 format = 1
 
 [node name="level_0" parent="TileMap_for_level" instance=ExtResource( 4 )]
 position = Vector2( 0, -704 )
 
 [node name="StaticBody2DForGround" type="StaticBody2D" parent="TileMap_for_level/level_0"]
-editor/display_folded = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForGround"]
 polygon = PoolVector2Array( -0.200134, 1097.75, 434.8, 1097.75, 434.8, 1163.75, 1038.37, 1163.75, 1038.37, 1099.75, 1331.37, 1099.75, 1331.37, 1224.75, 1531.36, 1225.69, 1531.58, 1273.7, 0.153259, 1274.65 )
@@ -119,32 +119,32 @@ position = Vector2( -185.008, 891.405 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForLevelLimits"]
 position = Vector2( 238.822, 15.0686 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForLevelLimits"]
 position = Vector2( 13042.3, 195.785 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="StaticBody2DForPlatformsAndBoxes" type="StaticBody2D" parent="TileMap_for_level/level_0"]
 editor/display_folded = true
 
 [node name="Platform0" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 1663.61, 929.61 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="Platform01" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 2079.64, 863.524 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="Box0" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 2080.27, 798.791 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Box01" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 2080.03, 735.654 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Box02" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 polygon = PoolVector2Array( 2497.56, 1153.06, 2496.66, 1215.33, 2625.71, 1215.33, 2625.71, 1088.08, 2686.18, 1088.08, 2686.18, 1027.61, 2560.73, 1027.61, 2560.73, 1152.15 )
@@ -152,84 +152,84 @@ one_way_collision = true
 
 [node name="Platform02" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 2977, 927.476 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="Platform03" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 3326.84, 800.724 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Platform04" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 4160.4, 866.562 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 one_way_collision = true
 
 [node name="Platform05" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 4797.7, 867.082 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 one_way_collision = true
 
 [node name="Platform06" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 5533.99, 736.887 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="Platform07" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 5792.17, 609.464 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="Platform08" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 5536.73, 479.999 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="Platform09" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 5792.17, 352.866 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="Platform10" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 6752.51, 866.21 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 one_way_collision = true
 
 [node name="Platform11" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 7393.5, 737.053 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="Platform12" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 8159.88, 737.053 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="Platform13" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 9344.68, 992.686 )
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 one_way_collision = true
 
 [node name="Platform14" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 10016.9, 800.027 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 one_way_collision = true
 
 [node name="Platform15" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 10815.4, 673.013 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 one_way_collision = true
 
 [node name="Platform16" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 11329.5, 927.903 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 one_way_collision = true
 
 [node name="Platform17" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 11683.9, 863.402 )
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 one_way_collision = true
 
 [node name="Platform18" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 12063.9, 864.402 )
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 one_way_collision = true
 
 [node name="Box03" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
@@ -237,7 +237,7 @@ polygon = PoolVector2Array( 6149.4, 834.748, 6150.4, 961.747, 6333.4, 961.747, 6
 
 [node name="Box04" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 6656.54, 799.521 )
-shape = SubResource( 18 )
+shape = SubResource( 19 )
 
 [node name="Box05" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 polygon = PoolVector2Array( 8194.18, 641.769, 8194.18, 704.62, 8381.33, 704.62, 8381.33, 578.221, 8258.43, 578.221, 8258.43, 641.769 )
@@ -258,19 +258,19 @@ polygon = PoolVector2Array( 10371.6, 961.519, 10371.6, 1028.06, 10308.1, 1028.06
 
 [node name="Box10" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 11168.5, 1121.3 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="Box11" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 11485.8, 1121.89 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="Box12" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 11168.6, 1056.57 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="Box13" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 9440.51, 927.375 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="Player" type="KinematicBody2D" parent="." groups=[
 "Player",
@@ -292,9 +292,13 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 12.3226, 14.5442 )
-shape = SubResource( 20 )
+shape = SubResource( 21 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 153.657, 20.0422 )
 current = true
+
+[node name="ExitLevel" parent="." instance=ExtResource( 7 )]
+script = ExtResource( 8 )
 [connection signal="body_entered" from="Node2D_water/Area2D" to="Node2D_water/Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="ExitLevel" to="ExitLevel" method="_on_ExitLevel_body_entered"]
