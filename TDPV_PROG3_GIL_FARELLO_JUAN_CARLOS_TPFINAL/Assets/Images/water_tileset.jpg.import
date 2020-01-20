@@ -2,19 +2,35 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<< Updated upstream
 path="res://.import/water_tileset.jpg-e1cb2db0b7d9c1a378a45b03177eee72.stex"
 metadata={
 "vram_texture": false
+=======
+path.s3tc="res://.import/water_tileset.jpg-e1cb2db0b7d9c1a378a45b03177eee72.s3tc.stex"
+path.etc2="res://.import/water_tileset.jpg-e1cb2db0b7d9c1a378a45b03177eee72.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+>>>>>>> Stashed changes
 }
 
 [deps]
 
 source_file="res://Assets/Images/water_tileset.jpg"
+<<<<<<< Updated upstream
 dest_files=[ "res://.import/water_tileset.jpg-e1cb2db0b7d9c1a378a45b03177eee72.stex" ]
 
 [params]
 
 compress/mode=0
+=======
+dest_files=[ "res://.import/water_tileset.jpg-e1cb2db0b7d9c1a378a45b03177eee72.s3tc.stex", "res://.import/water_tileset.jpg-e1cb2db0b7d9c1a378a45b03177eee72.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+>>>>>>> Stashed changes
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

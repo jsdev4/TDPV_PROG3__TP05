@@ -1,15 +1,15 @@
 extends KinematicBody2D
 tool
 export(float) var GRAVITY = 400
-export(float) var FLOOR_ANGLE_TOLERANCE = 40
+#export(float) var FLOOR_ANGLE_TOLERANCE = 40
 export(float) var WALK_FORCE =20
 export(float) var WALK_MIN_SPEED = 10
 export(float) var WALK_MAX_SPEED = 70
 export(float) var STOP_FORCE = 800
 export(float) var JUMP_SPEED = 80 setget _set_jump_speed
 export(float) var JUMP_MAX_AIRBORNE_TIME = 0.4
-export(float) var  SLIDE_STOP_VELOCITY = 1.0 # One pixel per second
-export(float) var  SLIDE_STOP_MIN_TRAVEL = 1.0
+#export(float) var  SLIDE_STOP_VELOCITY = 1.0 # One pixel per second
+#export(float) var  SLIDE_STOP_MIN_TRAVEL = 1.0
 var velocity = Vector2()
 var on_air_time = 1
 var jumping = false
@@ -32,15 +32,16 @@ func _ready():
 func _physics_process(delta):
 	if Engine.editor_hint: 
 		return
-		emit_signal("move_me")
+#		emit_signal("move_me")
 	var force = Vector2(0, GRAVITY)
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_just_pressed("jump")
-	var animation
+	var hide=Input.is_action_pressed("Hide")
+#	var animation
 	var sprite
 	var stop = true
-	var material=get_node("Sprite").get_material()
+#	var material=get_node("Sprite").get_material()
 	
 	
 #	animation=get_node("AnimationPlayer")
@@ -83,10 +84,12 @@ func _physics_process(delta):
 		#elif(Input.is_action_just_released("megabooster")):
 		#	material.set_shader_param("glow",0.0)
 	#material.set_shader_param("received_color",color_to_change)
-	get_node("Sprite").update()
+	#if(hide):
+	#	$Sprite.modulate.a=0.0
+	#get_node("Sprite").update()
 		
 	velocity += force*delta
-	var motion = velocity*delta
+#	var motion = velocity*delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	if is_on_floor():
 		on_air_time = 0
@@ -113,8 +116,12 @@ func _set_jump_speed(js):
 	update()
 	
 
+<<<<<<< Updated upstream
 func _on_Area2D_body_entered(body):
 	pass # Replace with function body.
+=======
+
+>>>>>>> Stashed changes
 	
 func _respawn():
 	position.x=230
