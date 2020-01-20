@@ -37,7 +37,10 @@ func _physics_process(delta):
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_just_pressed("jump")
+<<<<<<< Updated upstream
 	var hide=Input.is_action_pressed("Hide")
+=======
+>>>>>>> Stashed changes
 #	var animation
 	var sprite
 	var stop = true
@@ -117,8 +120,12 @@ func _set_jump_speed(js):
 	
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 func _on_Area2D_body_entered(body):
 	pass # Replace with function body.
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes

@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=33 format=2]
+=======
+[gd_scene load_steps=35 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://water_scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Water/water_script.gd" type="Script" id=2]
@@ -9,9 +13,10 @@
 [ext_resource path="res://Assets/Images/dummy_for_test.png" type="Texture" id=6]
 [ext_resource path="res://ExitLevel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/ExitLevel/exit_script.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Images/time_flies_by_kvacm_ddm3pch-fullview.jpg" type="Texture" id=9]
-[ext_resource path="res://background_01.tscn" type="PackedScene" id=10]
-[ext_resource path="res://background_0.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Shaders/background02_shader.shader" type="Shader" id=9]
+[ext_resource path="res://Assets/Images/time_flies_by_kvacm_ddm3pch-fullview.jpg" type="Texture" id=10]
+[ext_resource path="res://background_01.tscn" type="PackedScene" id=11]
+[ext_resource path="res://background_0.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 502.219, 122.343 )
@@ -116,10 +121,16 @@ extents = Vector2( 27.6846, 31.643 )
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 35.79, 49.6313 )
 
+[sub_resource type="ShaderMaterial" id=22]
+shader = ExtResource( 9 )
+shader_param/received_color = Plane( 0.32, 0.55, 1, 1 )
+
 [node name="Level0" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ -1295.57 ]
+}
 
 [node name="Water" parent="." instance=ExtResource( 1 )]
-editor/display_folded = true
 position = Vector2( 404.15, 378.301 )
 
 [node name="Node2D" parent="Water" instance=ExtResource( 1 )]
@@ -793,24 +804,34 @@ motion_scale = Vector2( 0.5, 0 )
 motion_mirroring = Vector2( 1440, 0 )
 
 [node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/Background"]
+material = SubResource( 22 )
 position = Vector2( 584.384, 95.5895 )
 scale = Vector2( 1.35255, 1.33484 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="FarParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 position = Vector2( 22, 128 )
 motion_scale = Vector2( 0.6, 0.6 )
 
-[node name="background_02" parent="Background/ParallaxBackground/FarParallaxLayer" instance=ExtResource( 10 )]
+[node name="background_02" parent="Background/ParallaxBackground/FarParallaxLayer" instance=ExtResource( 11 )]
 position = Vector2( -494.127, -765 )
 
 [node name="NearParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+editor/display_folded = true
 position = Vector2( 109.7, 58.2621 )
 motion_scale = Vector2( 0.8, 0.8 )
 
+<<<<<<< Updated upstream
 [node name="background_0" parent="Background/ParallaxBackground/NearParallaxLayer" instance=ExtResource( 11 )]
 position = Vector2( -313.354, -767.503 )
 =======
+>>>>>>> Stashed changes
+=======
+[node name="background_0" parent="Background/ParallaxBackground/NearParallaxLayer" instance=ExtResource( 12 )]
+position = Vector2( -175, -640 )
+
+[node name="CorruptedFiles" type="Node2D" parent="."]
+position = Vector2( 1557.17, -148.77 )
 >>>>>>> Stashed changes
 [connection signal="body_entered" from="Water/Area2D" to="Water/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="ExitLevel" to="ExitLevel" method="_on_ExitLevel_body_entered"]

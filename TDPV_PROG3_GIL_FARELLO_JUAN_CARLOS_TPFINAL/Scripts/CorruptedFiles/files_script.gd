@@ -1,5 +1,6 @@
 extends PathFollow2D
 signal wasted
+<<<<<<< Updated upstream
 export var kind_of_file=0
 var touched
 var number_of_touched
@@ -31,3 +32,21 @@ func _on_Area2D_body_entered(body):
 func delete_if_touched():
 	if number_of_touched==2:
 		queue_free()
+=======
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	connect("wasted",get_node("../../../Player"),"_respawn")
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Area2D_body_entered(body):
+	if body.name=="Player":
+		emit_signal("wasted")
+>>>>>>> Stashed changes

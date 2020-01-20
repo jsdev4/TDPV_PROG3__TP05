@@ -7,6 +7,7 @@ https://vxresource.wordpress.com/2010/03/17/the-real-macks-tileset/
 https://opengameart.org/content/sci-fi-interior-tiles
 https://www.deviantart.com/nicnubill
 
+<<<<<<< Updated upstream
 background:
 https://www.artstation.com/artwork/RYwJ1E
 
@@ -23,3 +24,7 @@ added tiled imported
 https://godotengine.org/asset-library/asset/158
 https://www.gamefromscratch.com/post/2017/07/05/Godot-Tutorial-Using-Add-Ons.aspx
 https://docs.godotengine.org/en/3.1/tutorials/plugins/editor/import_plugins.html
+=======
+
+https://www.netclipart.com/isee/ihwRxhT_pixel-art-character-sprites/
+>>>>>>> Stashed changes
