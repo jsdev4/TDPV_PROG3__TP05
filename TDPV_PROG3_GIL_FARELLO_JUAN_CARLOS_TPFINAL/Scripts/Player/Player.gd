@@ -1,27 +1,29 @@
 extends KinematicBody2D
 tool
 export(float) var GRAVITY = 400
-#export(float) var FLOOR_ANGLE_TOLERANCE = 40
 export(float) var WALK_FORCE =20
 export(float) var WALK_MIN_SPEED = 10
 export(float) var WALK_MAX_SPEED = 70
 export(float) var STOP_FORCE = 800
 export(float) var JUMP_SPEED = 80 setget _set_jump_speed
 export(float) var JUMP_MAX_AIRBORNE_TIME = 0.4
-#export(float) var  SLIDE_STOP_VELOCITY = 1.0 # One pixel per second
-#export(float) var  SLIDE_STOP_MIN_TRAVEL = 1.0
+export (PackedScene)var file_converter
+
 var velocity = Vector2()
 var on_air_time = 1
 var jumping = false
 var jump_curve = PoolVector2Array()
-
 var flipped=Vector2()
-#var color_to_change=Color()
 var lifes
-#var Pos setget setPos, getPos
+var can_fire
+var timer_for_can_fire
+var hitted
+
 func _ready():
 	lifes=1
 	flipped.y=0
+	can_fire=true
+	timer_for_can_fire=0
 	emit_signal("draw")
 	#color_to_change=Color(1,1,1,1)
 	if Engine.editor_hint: #para que haga draw sólo en tool mode
@@ -37,22 +39,26 @@ func _physics_process(delta):
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_just_pressed("jump")
-<<<<<<< Updated upstream
-	var hide=Input.is_action_pressed("Hide")
-=======
->>>>>>> Stashed changes
+	var fire=Input.is_action_just_released("fire")
+	#var hide=Input.is_action_pressed("Hide")
 #	var animation
 	var sprite
 	var stop = true
-#	var material=get_node("Sprite").get_material()
+	var material=get_node("Sprite").get_material()
 	
-	
+	if hitted==true:
+		material.set_shader_param("glow",1.0)
+	if hitted==false:
+		material.set_shader_param("glow",0.0)
+	if lifes==0:
+		get_tree().reload_current_scene()
 #	animation=get_node("AnimationPlayer")
 	sprite= get_node("Sprite")
 	if (walk_left):
 		stop = false
 		flipped.x=-10
-		sprite.flip_h=true
+		sprite.flip_h=true	
+	
 		#if(animation.is_playing()&&stop==false):
 		#		animation.play("Running")
 		if (velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED):
@@ -88,11 +94,37 @@ func _physics_process(delta):
 		#	material.set_shader_param("glow",0.0)
 	#material.set_shader_param("received_color",color_to_change)
 	#if(hide):
-	#	$Sprite.modulate.a=0.0
-	#get_node("Sprite").update()
+	#	timer_for_hide+=delta
+	#	emit_signal("is_hiding")
+	if can_fire==true:
+		if fire&&sprite.flip_h==false:
+			
+			var new_file_converter=file_converter.instance()
+			new_file_converter.set_position(get_node("Position2D").global_position)
+			new_file_converter.velocity.y=new_file_converter.potency*-sin(70)
+			new_file_converter.velocity.x=new_file_converter.potency*cos(70)
+			get_tree().get_nodes_in_group("Main")[0].add_child(new_file_converter)
+			can_fire=false
+			new_file_converter._set_rotation()
+			new_file_converter._set_direction_for_rotation(true)
 		
+		elif fire&&sprite.flip_h==true:
+			var new_file_converter=file_converter.instance()
+			new_file_converter.set_position(get_node("Position2D2").global_position)
+			new_file_converter.velocity.y=new_file_converter.potency*-sin(70)
+			new_file_converter.velocity.x=(new_file_converter.potency*cos(70))*-1
+			get_tree().get_nodes_in_group("Main")[0].add_child(new_file_converter)
+			new_file_converter._set_rotation()
+			new_file_converter._set_direction_for_rotation(false)
+			can_fire=false
+	if can_fire==false:
+		
+		timer_for_can_fire+=delta
+		if timer_for_can_fire>1:
+			timer_for_can_fire=0
+			can_fire=true
+	get_node("Sprite").update()
 	velocity += force*delta
-#	var motion = velocity*delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	if is_on_floor():
 		on_air_time = 0
@@ -104,7 +136,6 @@ func _physics_process(delta):
 	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping):
 		velocity.y = -JUMP_SPEED
 		jumping = true
-		
 	on_air_time += delta
 func calculate_jump_curve():
 	var t = 2*JUMP_SPEED/GRAVITY
@@ -118,21 +149,14 @@ func _set_jump_speed(js):
 	calculate_jump_curve()
 	update()
 	
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-func _on_Area2D_body_entered(body):
-	pass # Replace with function body.
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
 	
 func _respawn():
-	position.x=230
-	position.y=230
+	get_tree().reload_current_scene()
 func _has_finished_the_level():
 	get_tree().reload_current_scene()
-	#reiniciar es a modo de testeo
+func _set_flashing_when_hitted():
+	hitted=true
+	
+func _set_not_flashing_when_leave_it():
+	hitted=false
+#poner emit signal cuando dejas de tocarlo emitir señal de quitar life

@@ -1,31 +1,4 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[gd_scene load_steps=33 format=2]
-=======
-[gd_scene load_steps=35 format=2]
->>>>>>> Stashed changes
-
-[ext_resource path="res://water_scene.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Water/water_script.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Images/b88de1b111daedfce7da2198ad4e4917.jpg" type="Texture" id=3]
-[ext_resource path="res://Assets/Level_on_tiles/level_0.tmx" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Images/dummy_for_test.png" type="Texture" id=6]
-[ext_resource path="res://ExitLevel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scripts/ExitLevel/exit_script.gd" type="Script" id=8]
-[ext_resource path="res://Shaders/background02_shader.shader" type="Shader" id=9]
-[ext_resource path="res://Assets/Images/time_flies_by_kvacm_ddm3pch-fullview.jpg" type="Texture" id=10]
-[ext_resource path="res://background_01.tscn" type="PackedScene" id=11]
-[ext_resource path="res://background_0.tscn" type="PackedScene" id=12]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 502.219, 122.343 )
-
-[sub_resource type="TileSet" id=2]
-0/name = "b88de1b111daedfce7da2198ad4e4917.jpg 0"
-0/texture = ExtResource( 3 )
-=======
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Shaders/background02_shader.shader" type="Shader" id=1]
 [ext_resource path="res://Assets/Images/time_flies_by_kvacm_ddm3pch-fullview.jpg" type="Texture" id=2]
@@ -37,11 +10,12 @@ extents = Vector2( 502.219, 122.343 )
 [ext_resource path="res://Assets/Level_on_tiles/level_0.tmx" type="PackedScene" id=8]
 [ext_resource path="res://ExitLevel.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/ExitLevel/exit_script.gd" type="Script" id=10]
-[ext_resource path="res://Scripts/CorruptedFiles/FileType.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/CorruptedFiles/File_type_for_difficulty.gd" type="Script" id=11]
 [ext_resource path="res://CorruptedFiles/AACFiles.tscn" type="PackedScene" id=12]
 [ext_resource path="res://CorruptedFiles/MP3Files.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Images/dummy_for_test.png" type="Texture" id=15]
+[ext_resource path="res://CorruptedFiles/WavFiles.tscn" type="PackedScene" id=14]
+[ext_resource path="res://CorruptedFiles/AIFFfiles.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -53,7 +27,6 @@ extents = Vector2( 502.219, 122.343 )
 [sub_resource type="TileSet" id=3]
 0/name = "b88de1b111daedfce7da2198ad4e4917.jpg 0"
 0/texture = ExtResource( 7 )
->>>>>>> Stashed changes
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 1216, 63, 64 )
@@ -63,244 +36,6 @@ extents = Vector2( 502.219, 122.343 )
 0/shapes = [  ]
 0/z_index = 0
 
-<<<<<<< Updated upstream
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 130.064, 193.305 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 60.3093, 29.5881 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 158.774, 31.9767 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 94.6968, 32.4562 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 31.339, 30.7986 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 159.563, 29.0413 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 124.555, 29.5862 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 253.616, 29.5649 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 187.931, 33.7282 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 89.0205, 30.2363 )
-
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 222.337, 30.4095 )
-
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 219.453, 30.3182 )
-
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 127.427, 31.9388 )
-
-[sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 544.818, 28.3384 )
-
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 123.524, 30.375 )
-
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 93.4668, 27.655 )
-
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 63.4248, 33.2055 )
-
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 27.6846, 31.643 )
-
-[sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 35.79, 49.6313 )
-
-[sub_resource type="ShaderMaterial" id=22]
-shader = ExtResource( 9 )
-shader_param/received_color = Plane( 0.32, 0.55, 1, 1 )
-
-[node name="Level0" type="Node2D"]
-__meta__ = {
-"_edit_vertical_guides_": [ -1295.57 ]
-}
-
-[node name="Water" parent="." instance=ExtResource( 1 )]
-position = Vector2( 404.15, 378.301 )
-
-[node name="Node2D" parent="Water" instance=ExtResource( 1 )]
-
-[node name="Area2D" type="Area2D" parent="Water"]
-editor/display_folded = true
-position = Vector2( 1605.78, 271.625 )
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Area2D"]
-position = Vector2( 19.0535, 44.6952 )
-shape = SubResource( 1 )
-
-[node name="TileMap_for_level" type="TileMap" parent="."]
-editor/display_folded = true
-position = Vector2( 41.2534, -4.76001 )
-tile_set = SubResource( 2 )
-format = 1
-
-[node name="level_0" parent="TileMap_for_level" instance=ExtResource( 4 )]
-editor/display_folded = true
-position = Vector2( 0, -704 )
-
-[node name="StaticBody2DForGround" type="StaticBody2D" parent="TileMap_for_level/level_0"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForGround"]
-polygon = PoolVector2Array( -0.200134, 1097.75, 434.8, 1097.75, 434.8, 1163.75, 1038.37, 1163.75, 1038.37, 1099.75, 1331.37, 1099.75, 1331.37, 1224.75, 1531.36, 1225.69, 1531.58, 1273.7, 0.153259, 1274.65 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForGround"]
-polygon = PoolVector2Array( 1542.64, 1030.75, 1542.64, 1146.75, 2168.14, 1146.75, 2168.14, 1028.75 )
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForGround"]
-polygon = PoolVector2Array( 2440.03, 1219.75, 2440.03, 1280.75, 12799.3, 1274.75, 12799.1, 1158.5, 11954, 1157.3, 10428.1, 1156.11, 10428.1, 1093.84, 10245.5, 1093.84, 10245.5, 1157.3, 8900.55, 1157.3, 8900.55, 1219.57, 6970.86, 1220.77, 6970.86, 1091.44, 6394.73, 1092.04, 6394.94, 963.211, 5186.73, 963.909, 5186.82, 1094.08, 3908.66, 1097.26, 3908.66, 1160.72, 3128.02, 1160.72, 3128.02, 1094.08, 2627.74, 1093.01, 2627.75, 1219.68 )
-
-[node name="StaticBody2DForLevelLimits" type="StaticBody2D" parent="TileMap_for_level/level_0"]
-position = Vector2( -185.008, 891.405 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForLevelLimits"]
-position = Vector2( 316.568, 13.4819 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForLevelLimits"]
-position = Vector2( 13042.3, 195.785 )
-shape = SubResource( 3 )
-
-[node name="StaticBody2DForPlatformsAndBoxes" type="StaticBody2D" parent="TileMap_for_level/level_0"]
-editor/display_folded = true
-
-[node name="Platform0" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 1663.61, 929.61 )
-shape = SubResource( 4 )
-one_way_collision = true
-
-[node name="Platform01" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 2079.64, 863.524 )
-shape = SubResource( 5 )
-one_way_collision = true
-
-[node name="Box0" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 2080.27, 798.791 )
-shape = SubResource( 6 )
-
-[node name="Box01" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 2080.03, 735.654 )
-shape = SubResource( 7 )
-
-[node name="Box02" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-polygon = PoolVector2Array( 2497.56, 1153.06, 2496.66, 1215.33, 2625.71, 1215.33, 2625.71, 1088.08, 2686.18, 1088.08, 2686.18, 1027.61, 2560.73, 1027.61, 2560.73, 1152.15 )
-one_way_collision = true
-
-[node name="Platform02" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 2977, 927.476 )
-shape = SubResource( 8 )
-one_way_collision = true
-
-[node name="Platform03" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 3326.84, 800.724 )
-shape = SubResource( 9 )
-
-[node name="Platform04" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 4160.4, 866.562 )
-shape = SubResource( 10 )
-one_way_collision = true
-
-[node name="Platform05" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 4797.7, 867.082 )
-shape = SubResource( 11 )
-one_way_collision = true
-
-[node name="Platform06" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 5533.99, 736.887 )
-shape = SubResource( 12 )
-one_way_collision = true
-
-[node name="Platform07" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 5792.17, 609.464 )
-shape = SubResource( 12 )
-one_way_collision = true
-
-[node name="Platform08" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 5536.73, 479.999 )
-shape = SubResource( 12 )
-one_way_collision = true
-
-[node name="Platform09" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 5792.17, 352.866 )
-shape = SubResource( 12 )
-one_way_collision = true
-
-[node name="Platform10" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 6752.51, 866.21 )
-shape = SubResource( 13 )
-one_way_collision = true
-
-[node name="Platform11" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 7393.5, 737.053 )
-shape = SubResource( 14 )
-
-[node name="Platform12" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 8159.88, 737.053 )
-shape = SubResource( 14 )
-
-[node name="Platform13" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 9344.68, 992.686 )
-shape = SubResource( 15 )
-one_way_collision = true
-
-[node name="Platform14" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 10016.9, 800.027 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="Platform15" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 10815.4, 673.013 )
-shape = SubResource( 17 )
-one_way_collision = true
-
-[node name="Platform16" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 11329.5, 927.903 )
-shape = SubResource( 17 )
-one_way_collision = true
-
-[node name="Platform17" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 11683.9, 863.402 )
-shape = SubResource( 18 )
-one_way_collision = true
-
-[node name="Platform18" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 12063.9, 864.402 )
-shape = SubResource( 18 )
-one_way_collision = true
-
-[node name="Box03" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-polygon = PoolVector2Array( 6149.4, 834.748, 6150.4, 961.747, 6333.4, 961.747, 6333.4, 897.747, 6265.35, 897.669, 6265.35, 834.015 )
-
-[node name="Box04" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 6656.54, 799.521 )
-shape = SubResource( 19 )
-
-[node name="Box05" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-polygon = PoolVector2Array( 8194.18, 641.769, 8194.18, 704.62, 8381.33, 704.62, 8381.33, 578.221, 8258.43, 578.221, 8258.43, 641.769 )
-
-[node name="Box06" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-polygon = PoolVector2Array( 8963.06, 1025.89, 8962.55, 1153.8, 9149.92, 1153.8, 9150.11, 1089.57, 9021.07, 1089.63, 9021.07, 1025.89 )
-
-[node name="Box07" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-polygon = PoolVector2Array( 9666.47, 1026.05, 9666.47, 1091.32, 9603, 1091.32, 9603, 1152.99, 9790.41, 1152.99, 9790.41, 1090.12, 9726.34, 1090.12, 9726.34, 1025.46 )
-
-[node name="Box08" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-=======
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 130.064, 402.327 )
 
@@ -422,10 +157,69 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2376.25, 179.312, 0, 0, 0, 0, 1027.16, 177.462 )
 }
 
-[sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 35.79, 49.6313 )
+[sub_resource type="Curve2D" id=28]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2052.29, 300.788, 0, 0, 0, 0, 2890.04, 301.078 )
+}
 
-[node name="Level0" type="Node2D"]
+[sub_resource type="Curve2D" id=29]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3585.04, 494.605, 0, 0, 0, 0, 2883.55, 492.447 )
+}
+
+[sub_resource type="Curve2D" id=30]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3590.23, 235.706, 0, 0, 0, 0, 2879.97, 233.948 )
+}
+
+[sub_resource type="Curve2D" id=31]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3587.6, 494.111, 0, 0, 0, 0, 4099.2, 492.353 )
+}
+
+[sub_resource type="Curve2D" id=32]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5124.58, 243.377, 0, 0, 0, 0, 3586.39, 240.86 )
+}
+
+[sub_resource type="Curve2D" id=33]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5478.59, -272.85, 0, 0, 0, 0, 4091.48, -275.941 )
+}
+
+[sub_resource type="Curve2D" id=34]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5627.63, -149.217, 0, 0, 0, 0, 5121.71, -149.417 )
+}
+
+[sub_resource type="Curve2D" id=35]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 7113.62, 115.823, 0, 0, 0, 0, 6343.05, 113.665 )
+}
+
+[sub_resource type="Curve2D" id=36]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 7298.57, 183.039, 0, 0, 0, 0, 8453.42, 180.249 )
+}
+
+[sub_resource type="Curve2D" id=37]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 7362.16, 623.575, 0, 0, 0, 0, 6402.86, 623.575 )
+}
+
+[sub_resource type="Curve2D" id=38]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 10439.3, 490.108, 0, 0, 0, 0, 10114.8, 490.587 )
+}
+
+[sub_resource type="Curve2D" id=39]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 11460.9, 561.685, 0, 0, 0, 0, 10429.5, 564.939 )
+}
+
+[node name="Level0" type="Node2D" groups=[
+"Main",
+]]
 __meta__ = {
 "_edit_vertical_guides_": [ -1295.57 ]
 }
@@ -464,7 +258,6 @@ motion_scale = Vector2( 0.8, 0.8 )
 position = Vector2( -175, -640 )
 
 [node name="Water" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 404.15, 378.301 )
 
 [node name="Node2D" parent="Water" instance=ExtResource( 5 )]
@@ -479,16 +272,17 @@ position = Vector2( 19.0535, 44.6952 )
 shape = SubResource( 2 )
 
 [node name="LevelTilemap" type="TileMap" parent="."]
-editor/display_folded = true
 position = Vector2( 41.2534, -4.76001 )
 tile_set = SubResource( 3 )
 format = 1
 
 [node name="level_0" parent="LevelTilemap" instance=ExtResource( 8 )]
-editor/display_folded = true
 position = Vector2( 0, -704 )
 
-[node name="StaticBody2DForGround" type="StaticBody2D" parent="LevelTilemap/level_0"]
+[node name="StaticBody2DForGround" type="StaticBody2D" parent="LevelTilemap/level_0" groups=[
+"Ground",
+]]
+editor/display_folded = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTilemap/level_0/StaticBody2DForGround"]
 polygon = PoolVector2Array( -0.200134, 1097.75, 434.8, 1097.75, 434.8, 1163.75, 1038.37, 1163.75, 1038.37, 1099.75, 1331.37, 1099.75, 1331.37, 1224.75, 1531.36, 1225.69, 1531.58, 1273.7, 0.153259, 1274.65 )
@@ -500,6 +294,7 @@ polygon = PoolVector2Array( 1542.64, 1030.75, 1542.64, 1146.75, 2168.14, 1146.75
 polygon = PoolVector2Array( 2440.03, 1219.75, 2440.03, 1280.75, 12799.3, 1274.75, 12799.1, 1158.5, 11954, 1157.3, 10428.1, 1156.11, 10428.1, 1093.84, 10245.5, 1093.84, 10245.5, 1157.3, 8900.55, 1157.3, 8900.55, 1219.57, 6970.86, 1220.77, 6970.86, 1091.44, 6394.73, 1092.04, 6394.94, 963.211, 5186.73, 963.909, 5186.82, 1094.08, 3908.66, 1097.26, 3908.66, 1160.72, 3128.02, 1160.72, 3128.02, 1094.08, 2627.74, 1093.01, 2627.75, 1219.68 )
 
 [node name="StaticBody2DForLevelLimits" type="StaticBody2D" parent="LevelTilemap/level_0"]
+editor/display_folded = true
 position = Vector2( -185.008, 891.405 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForLevelLimits"]
@@ -510,7 +305,9 @@ shape = SubResource( 4 )
 position = Vector2( 13045, -10 )
 shape = SubResource( 4 )
 
-[node name="StaticBody2DForPlatformsAndBoxes" type="StaticBody2D" parent="LevelTilemap/level_0"]
+[node name="StaticBody2DForPlatformsAndBoxes" type="StaticBody2D" parent="LevelTilemap/level_0" groups=[
+"Platforms",
+]]
 editor/display_folded = true
 
 [node name="Platform0" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
@@ -634,31 +431,10 @@ polygon = PoolVector2Array( 8963.06, 1025.89, 8962.55, 1153.8, 9149.92, 1153.8, 
 polygon = PoolVector2Array( 9666.47, 1026.05, 9666.47, 1091.32, 9603, 1091.32, 9603, 1152.99, 9790.41, 1152.99, 9790.41, 1090.12, 9726.34, 1090.12, 9726.34, 1025.46 )
 
 [node name="Box08" type="CollisionPolygon2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
->>>>>>> Stashed changes
 position = Vector2( 4475.16, -192.532 )
 scale = Vector2( 0.95978, 1 )
 polygon = PoolVector2Array( 6149.4, 834.748, 6150.4, 961.747, 6333.4, 961.747, 6333.4, 897.747, 6265.35, 897.669, 6265.35, 834.015 )
 
-<<<<<<< Updated upstream
-[node name="Box09" type="CollisionPolygon2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-polygon = PoolVector2Array( 10371.6, 961.519, 10371.6, 1028.06, 10308.1, 1028.06, 10308.9, 1089.97, 10428.5, 1090.03, 10428.1, 961.379 )
-
-[node name="Box10" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 11168.5, 1121.3 )
-shape = SubResource( 20 )
-
-[node name="Box11" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 11485.8, 1121.89 )
-shape = SubResource( 20 )
-
-[node name="Box12" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 11168.6, 1056.57 )
-shape = SubResource( 20 )
-
-[node name="Box13" type="CollisionShape2D" parent="TileMap_for_level/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 9440.51, 927.375 )
-shape = SubResource( 20 )
-=======
 [node name="Box09" type="CollisionPolygon2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
 polygon = PoolVector2Array( 10371.6, 961.519, 10371.6, 1028.06, 10308.1, 1028.06, 10308.9, 1089.97, 10428.5, 1090.03, 10428.1, 961.379 )
 
@@ -682,7 +458,7 @@ shape = SubResource( 21 )
 position = Vector2( 41.253, -4.76 )
 tile_set = SubResource( 22 )
 format = 1
-tile_data = PoolIntArray( -130905, 0, 0, -65421, 0, 0, -65409, 0, 0, 53, 0, 0, 148, 0, 0, 65597, 0, 0, 65608, 0, 0, 65644, 0, 0, 131098, 0, 0, 131120, 0, 0, 131247, 0, 0, 196703, 0, 0, 262177, 0, 0, 262185, 0, 0, 327741, 0, 0, 327752, 0, 0, 327760, 0, 0, 327788, 0, 0, 327859, 0, 0, 393411, 0, 0, 458775, 0, 0, 458868, 0, 0, 458883, 0, 0 )
+tile_data = PoolIntArray( -130905, 0, 0, -65421, 0, 0, -65409, 0, 0, 32, 0, 0, 53, 0, 0, 87, 3, 0, 103, 3, 0, 148, 0, 0, 65597, 0, 0, 65608, 0, 0, 65632, 3, 0, 65644, 0, 0, 131098, 0, 0, 131120, 0, 0, 131247, 0, 0, 196703, 0, 0, 262177, 0, 0, 262185, 0, 0, 327741, 0, 0, 327752, 0, 0, 327760, 0, 0, 327788, 0, 0, 327859, 0, 0, 393411, 0, 0, 458775, 0, 0, 458868, 0, 0, 458883, 0, 0 )
 
 [node name="ExitLevel" parent="." instance=ExtResource( 9 )]
 script = ExtResource( 10 )
@@ -702,6 +478,7 @@ rotation = 0.00250489
 direction = true
 
 [node name="MP3Files" parent="CorruptedFiles/Files" instance=ExtResource( 13 )]
+rotate = false
 kind_of_file = 1
 direction = true
 
@@ -726,14 +503,14 @@ direction = true
 editor/display_folded = true
 curve = SubResource( 25 )
 
-[node name="PathFollow2D2" parent="CorruptedFiles/Files03" instance=ExtResource( 12 )]
+[node name="AACFiles" parent="CorruptedFiles/Files03" instance=ExtResource( 12 )]
 position = Vector2( 447.023, 624.548 )
 
 [node name="Files04" type="Path2D" parent="CorruptedFiles"]
 editor/display_folded = true
 curve = SubResource( 26 )
 
-[node name="PathFollow2D3" parent="CorruptedFiles/Files04" instance=ExtResource( 12 )]
+[node name="AACFiles" parent="CorruptedFiles/Files04" instance=ExtResource( 12 )]
 position = Vector2( 1161.07, 302.415 )
 
 [node name="Files05" type="Path2D" parent="CorruptedFiles"]
@@ -751,87 +528,158 @@ position = Vector2( 2376.25, 179.312 )
 rotation = -3.14022
 kind_of_file = 1
 direction = true
->>>>>>> Stashed changes
 
-[node name="Player" type="KinematicBody2D" parent="." groups=[
-"Player",
-]]
+[node name="Files06" type="Path2D" parent="CorruptedFiles"]
 editor/display_folded = true
-position = Vector2( 400.159, 255.105 )
-<<<<<<< Updated upstream
-script = ExtResource( 5 )
-=======
-script = ExtResource( 14 )
->>>>>>> Stashed changes
-GRAVITY = 250.0
-WALK_FORCE = 150.0
-WALK_MIN_SPEED = 150.0
-WALK_MAX_SPEED = 230.0
-JUMP_SPEED = 300.0
-JUMP_MAX_AIRBORNE_TIME = 0.5
+curve = SubResource( 28 )
 
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 13.5623, 13.9138 )
-scale = Vector2( 0.319704, 0.327428 )
-<<<<<<< Updated upstream
-texture = ExtResource( 6 )
+[node name="MP3Files" parent="CorruptedFiles/Files06" instance=ExtResource( 13 )]
+position = Vector2( 2878.68, 301.074 )
+rotation = -3.14094
+offset = 825.15
+rotate = false
+kind_of_file = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 12.3226, 14.5442 )
-shape = SubResource( 21 )
-=======
-texture = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 12.3226, 14.5442 )
-shape = SubResource( 28 )
->>>>>>> Stashed changes
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 153.657, 20.0422 )
-current = true
-<<<<<<< Updated upstream
-
-[node name="ExitLevel" parent="." instance=ExtResource( 7 )]
-script = ExtResource( 8 )
-
-[node name="Background" type="CanvasLayer" parent="."]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
-
-[node name="Background" type="ParallaxLayer" parent="Background/ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0 )
-motion_mirroring = Vector2( 1440, 0 )
-
-[node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/Background"]
-material = SubResource( 22 )
-position = Vector2( 584.384, 95.5895 )
-scale = Vector2( 1.35255, 1.33484 )
-texture = ExtResource( 10 )
-
-[node name="FarParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
-position = Vector2( 22, 128 )
-motion_scale = Vector2( 0.6, 0.6 )
-
-[node name="background_02" parent="Background/ParallaxBackground/FarParallaxLayer" instance=ExtResource( 11 )]
-position = Vector2( -494.127, -765 )
-
-[node name="NearParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+[node name="Files07" type="Path2D" parent="CorruptedFiles"]
 editor/display_folded = true
-position = Vector2( 109.7, 58.2621 )
-motion_scale = Vector2( 0.8, 0.8 )
+curve = SubResource( 29 )
 
-<<<<<<< Updated upstream
-[node name="background_0" parent="Background/ParallaxBackground/NearParallaxLayer" instance=ExtResource( 11 )]
-position = Vector2( -313.354, -767.503 )
-=======
->>>>>>> Stashed changes
-=======
-[node name="background_0" parent="Background/ParallaxBackground/NearParallaxLayer" instance=ExtResource( 12 )]
-position = Vector2( -175, -640 )
+[node name="AACFiles" parent="CorruptedFiles/Files07" instance=ExtResource( 12 )]
+position = Vector2( 3585.04, 494.605 )
+direction = true
 
-[node name="CorruptedFiles" type="Node2D" parent="."]
-position = Vector2( 1557.17, -148.77 )
->>>>>>> Stashed changes
+[node name="Files08" type="Path2D" parent="CorruptedFiles"]
+editor/display_folded = true
+curve = SubResource( 30 )
+
+[node name="AACFiles2" parent="CorruptedFiles/Files08" instance=ExtResource( 12 )]
+position = Vector2( 3590.23, 235.706 )
+direction = true
+
+[node name="FIles09" type="Path2D" parent="CorruptedFiles"]
+editor/display_folded = true
+curve = SubResource( 31 )
+
+[node name="WavFiles" parent="CorruptedFiles/FIles09" instance=ExtResource( 14 )]
+kind_of_file = 2
+
+[node name="Files10" type="Path2D" parent="CorruptedFiles"]
+curve = SubResource( 32 )
+script = ExtResource( 11 )
+number_of_path = 3
+
+[node name="WavFiles" parent="CorruptedFiles/Files10" instance=ExtResource( 14 )]
+position = Vector2( 5124.58, 243.377 )
+rotation = 0.0
+rotate = false
+kind_of_file = 2
+direction = true
+
+[node name="AIFFfiles" parent="CorruptedFiles/Files10" instance=ExtResource( 15 )]
+rotate = false
+kind_of_file = 3
+direction = true
+
+[node name="Files11" type="Path2D" parent="CorruptedFiles"]
+editor/display_folded = true
+curve = SubResource( 33 )
+script = ExtResource( 11 )
+number_of_path = 4
+
+[node name="WavFiles" parent="CorruptedFiles/Files11" instance=ExtResource( 14 )]
+position = Vector2( 5478.59, -272.85 )
+rotation = 0.0
+rotate = false
+kind_of_file = 2
+direction = true
+
+[node name="AIFFfiles" parent="CorruptedFiles/Files11" instance=ExtResource( 15 )]
+position = Vector2( 5478.59, -272.85 )
+rotate = false
+kind_of_file = 3
+direction = true
+
+[node name="Files12" type="Path2D" parent="CorruptedFiles"]
+curve = SubResource( 34 )
+script = ExtResource( 11 )
+number_of_path = 5
+
+[node name="AIFFfiles" parent="CorruptedFiles/Files12" instance=ExtResource( 15 )]
+position = Vector2( 5627.63, -149.217 )
+rotate = false
+kind_of_file = 3
+direction = true
+
+[node name="AACFiles" parent="CorruptedFiles/Files12" instance=ExtResource( 12 )]
+position = Vector2( 5627.63, -149.217 )
+direction = true
+
+[node name="Files13" type="Path2D" parent="CorruptedFiles"]
+editor/display_folded = true
+curve = SubResource( 35 )
+script = ExtResource( 11 )
+number_of_path = 6
+
+[node name="AIFFfiles" parent="CorruptedFiles/Files13" instance=ExtResource( 15 )]
+position = Vector2( 7113.62, 115.823 )
+rotate = false
+kind_of_file = 3
+direction = true
+
+[node name="AACFiles" parent="CorruptedFiles/Files13" instance=ExtResource( 12 )]
+position = Vector2( 7113.62, 115.823 )
+direction = true
+
+[node name="Files14" type="Path2D" parent="CorruptedFiles"]
+editor/display_folded = true
+curve = SubResource( 36 )
+
+[node name="AIFFfiles2" parent="CorruptedFiles/Files14" instance=ExtResource( 15 )]
+position = Vector2( 7298.57, 183.039 )
+rotate = false
+kind_of_file = 3
+
+[node name="Files15" type="Path2D" parent="CorruptedFiles"]
+editor/display_folded = true
+curve = SubResource( 37 )
+
+[node name="WavFiles2" parent="CorruptedFiles/Files15" instance=ExtResource( 14 )]
+position = Vector2( 7362.16, 623.575 )
+rotation = 0.0
+rotate = false
+kind_of_file = 2
+direction = true
+velocity = 300
+
+[node name="Files16" type="Path2D" parent="CorruptedFiles"]
+editor/display_folded = true
+curve = SubResource( 38 )
+script = ExtResource( 11 )
+number_of_path = 7
+
+[node name="AIFFfiles" parent="CorruptedFiles/Files16" instance=ExtResource( 15 )]
+position = Vector2( 10439.3, 490.108 )
+rotate = false
+kind_of_file = 3
+direction = true
+velocity = 160
+
+[node name="AACFiles" parent="CorruptedFiles/Files16" instance=ExtResource( 12 )]
+position = Vector2( 10439.3, 490.108 )
+direction = true
+velocity = 160
+
+[node name="Files17" type="Path2D" parent="CorruptedFiles"]
+editor/display_folded = true
+curve = SubResource( 39 )
+
+[node name="AIFFfiles" parent="CorruptedFiles/Files17" instance=ExtResource( 15 )]
+position = Vector2( 11460.9, 561.685 )
+rotate = false
+kind_of_file = 3
+direction = true
+velocity = 160
+
+[node name="Player" parent="." instance=ExtResource( 16 )]
 [connection signal="body_entered" from="Water/Area2D" to="Water/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="ExitLevel" to="ExitLevel" method="_on_ExitLevel_body_entered"]
