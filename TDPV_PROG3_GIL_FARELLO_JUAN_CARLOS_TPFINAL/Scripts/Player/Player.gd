@@ -8,25 +8,46 @@ export(float) var WALK_MAX_SPEED = 70
 export(float) var STOP_FORCE = 800
 export(float) var JUMP_SPEED = 80 setget _set_jump_speed
 export(float) var JUMP_MAX_AIRBORNE_TIME = 0.4
+<<<<<<< Updated upstream
 export(float) var  SLIDE_STOP_VELOCITY = 1.0 # One pixel per second
 export(float) var  SLIDE_STOP_MIN_TRAVEL = 1.0
+=======
+export (PackedScene)var file_converter
+export (PackedScene) var lifes_to_show
+var offset_for_lifes=50
+var lifes_list=[]
+signal random_file_converter
+>>>>>>> Stashed changes
 var velocity = Vector2()
 var on_air_time = 1
 var jumping = false
 var jump_curve = PoolVector2Array()
 signal im_dead
 var flipped=Vector2()
+<<<<<<< Updated upstream
 #var color_to_change=Color()
 
 func _ready():
 	flipped.y=0
+=======
+export var lifes=5
+var can_fire
+var timer_for_can_fire
+var hitted
+
+func _ready():
+	flipped.y=0
+	can_fire=true
+	timer_for_can_fire=0
+
+>>>>>>> Stashed changes
 	emit_signal("draw")
 	#color_to_change=Color(1,1,1,1)
 	if Engine.editor_hint: #para que haga draw sólo en tool mode
 		jump_curve.resize(5)
 		calculate_jump_curve()
 		update()
-		
+	show_lifes()
 func _physics_process(delta):
 	if Engine.editor_hint: 
 		return
@@ -40,7 +61,20 @@ func _physics_process(delta):
 	var stop = true
 	var material=get_node("Sprite").get_material()
 	
+<<<<<<< Updated upstream
 	
+=======
+	if hitted==true:
+		$Particles2D.emitting=true
+		material.set_shader_param("glow",1.0)
+
+	if hitted==false:
+		$Particles2D.emitting=false
+		material.set_shader_param("glow",0.0)
+	
+	if lifes==0:
+		get_tree().reload_current_scene()
+>>>>>>> Stashed changes
 #	animation=get_node("AnimationPlayer")
 	sprite= get_node("Sprite")
 	if (walk_left):
@@ -80,7 +114,46 @@ func _physics_process(delta):
 		#	material.set_shader_param("glow",1.0)
 		#elif(Input.is_action_just_released("megabooster")):
 		#	material.set_shader_param("glow",0.0)
+		
+			
 	#material.set_shader_param("received_color",color_to_change)
+<<<<<<< Updated upstream
+=======
+	#if(hide):
+	#	timer_for_hide+=delta
+	#	emit_signal("is_hiding")
+	if can_fire==true:
+		
+		if fire&&sprite.flip_h==false:
+			emit_signal("random_file_converter")
+			var new_file_converter=file_converter.instance()
+			
+			new_file_converter.set_position(get_node("Position2D").global_position)
+			new_file_converter.velocity.y=new_file_converter.potency*-sin(70)
+			new_file_converter.velocity.x=new_file_converter.potency*cos(70)
+			get_tree().get_nodes_in_group("Main")[0].add_child(new_file_converter)
+			new_file_converter.set_tipe_of_converter()
+			can_fire=false
+			new_file_converter._set_rotation()
+			new_file_converter._set_direction_for_rotation(true)
+		
+		elif fire&&sprite.flip_h==true:
+			var new_file_converter=file_converter.instance()
+			new_file_converter.set_position(get_node("Position2D2").global_position)
+			new_file_converter.velocity.y=new_file_converter.potency*-sin(70)
+			new_file_converter.velocity.x=(new_file_converter.potency*cos(70))*-1
+			get_tree().get_nodes_in_group("Main")[0].add_child(new_file_converter)
+			new_file_converter.set_tipe_of_converter()
+			new_file_converter._set_rotation()
+			new_file_converter._set_direction_for_rotation(false)
+			can_fire=false
+	if can_fire==false:
+		
+		timer_for_can_fire+=delta
+		if timer_for_can_fire>1:
+			timer_for_can_fire=0
+			can_fire=true
+>>>>>>> Stashed changes
 	get_node("Sprite").update()
 		
 	velocity += force*delta
@@ -109,4 +182,33 @@ func _set_jump_speed(js):
 	JUMP_SPEED = js
 	calculate_jump_curve()
 	update()
+<<<<<<< Updated upstream
 	
+=======
+	
+	
+func _respawn():
+	get_tree().reload_current_scene()
+func _has_finished_the_level():
+	get_tree().reload_current_scene()
+func _set_flashing_when_hitted():
+	hitted=true
+func _set_not_flashing_when_leave_it():
+	hitted=false
+	lifes-=1
+	lifes_list[lifes].queue_free()
+	print (lifes)
+
+func show_lifes():
+	for i in lifes:
+		var new_lifes=lifes_to_show.instance()
+		get_tree().get_nodes_in_group("GUI")[0].add_child(new_lifes)
+		new_lifes.global_position.x+=offset_for_lifes*i
+		lifes_list.append(new_lifes)
+func add_lifes():
+	lifes+=1
+	var new_lifes=lifes_to_show.instance()
+	get_tree().get_nodes_in_group("GUI")[0].add_child(new_lifes)
+	new_lifes.global_position.x+=offset_for_lifes*(lifes-1)
+	lifes_list[lifes].append(new_lifes)
+>>>>>>> Stashed changes

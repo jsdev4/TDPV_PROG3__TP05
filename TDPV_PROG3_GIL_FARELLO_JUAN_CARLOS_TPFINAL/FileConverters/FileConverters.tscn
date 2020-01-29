@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/FileConverters/file_converter.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/radio_converter.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/1024px-HTML5_audio_icon.svg.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/file_converter0.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.9091, 12.3293 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="FileConverters" type="KinematicBody2D"]
+position = Vector2( 69.3004, -7.18674 )
+collision/safe_margin = 2.0
+script = ExtResource( 1 )
+potency = 400.0
+gravity = 400.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.0887934, -1.29303 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.110184, 0.220364 )
+shape = SubResource( 2 )
+one_way_collision_margin = 0.0
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
