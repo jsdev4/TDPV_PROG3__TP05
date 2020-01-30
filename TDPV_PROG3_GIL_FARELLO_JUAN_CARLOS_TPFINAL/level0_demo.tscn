@@ -1,11 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=6 format=2]
-
-[ext_resource path="res://Assets/Level_on_tiles/level_0.tmx" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Images/dummy_for_test.png" type="Texture" id=3]
-=======
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Shaders/background02_shader.shader" type="Shader" id=1]
 [ext_resource path="res://Assets/Images/time_flies_by_kvacm_ddm3pch-fullview.jpg" type="Texture" id=2]
@@ -24,19 +17,29 @@
 [ext_resource path="res://CorruptedFiles/AIFFfiles.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://GUI/Lifes.tscn" type="PackedScene" id=17]
->>>>>>> Stashed changes
+[ext_resource path="res://Assets/Fonts/BLADRMF_.TTF" type="DynamicFontData" id=18]
+[ext_resource path="res://Scripts/Timer/timer_script.gd" type="Script" id=19]
+[ext_resource path="res://Scripts/MainAndNavigation/pause_script.gd" type="Script" id=20]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 57.0091, 193.305 )
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/received_color = Plane( 0.32, 0.55, 1, 1 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 35.79, 49.6313 )
+extents = Vector2( 502.219, 122.343 )
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="TileSet" id=3]
+0/name = "b88de1b111daedfce7da2198ad4e4917.jpg 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 1216, 63, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
 
-<<<<<<< Updated upstream
-[node name="TileMap" type="TileMap" parent="."]
-=======
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 130.064, 402.327 )
 
@@ -218,6 +221,14 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 11460.9, 561.685, 0, 0, 0, 0, 10429.5, 564.939 )
 }
 
+[sub_resource type="DynamicFont" id=40]
+size = 40
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=41]
+size = 40
+font_data = ExtResource( 18 )
+
 [node name="Level0" type="Node2D" groups=[
 "Main",
 ]]
@@ -226,13 +237,10 @@ __meta__ = {
 }
 
 [node name="Background" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
-editor/display_folded = true
 
 [node name="Background" type="ParallaxLayer" parent="Background/ParallaxBackground"]
-editor/display_folded = true
 motion_scale = Vector2( 0.5, 0 )
 motion_mirroring = Vector2( 1440, 0 )
 
@@ -277,58 +285,29 @@ shape = SubResource( 2 )
 editor/display_folded = true
 position = Vector2( 41.2534, -4.76001 )
 tile_set = SubResource( 3 )
->>>>>>> Stashed changes
 format = 1
 
-[node name="level_0" parent="TileMap" instance=ExtResource( 1 )]
-position = Vector2( -288.403, -677.748 )
+[node name="level_0" parent="LevelTilemap" instance=ExtResource( 8 )]
+position = Vector2( 0, -704 )
 
-[node name="StaticBody2DForGround" type="StaticBody2D" parent="TileMap/level_0"]
+[node name="StaticBody2DForGround" type="StaticBody2D" parent="LevelTilemap/level_0" groups=[
+"Ground",
+]]
+editor/display_folded = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/level_0/StaticBody2DForGround"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTilemap/level_0/StaticBody2DForGround"]
 polygon = PoolVector2Array( -0.200134, 1097.75, 434.8, 1097.75, 434.8, 1163.75, 1038.37, 1163.75, 1038.37, 1099.75, 1331.37, 1099.75, 1331.37, 1224.75, 1531.36, 1225.69, 1531.58, 1273.7, 0.153259, 1274.65 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TileMap/level_0/StaticBody2DForGround"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="LevelTilemap/level_0/StaticBody2DForGround"]
 polygon = PoolVector2Array( 1542.64, 1030.75, 1542.64, 1146.75, 2168.14, 1146.75, 2168.14, 1028.75 )
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="TileMap/level_0/StaticBody2DForGround"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="LevelTilemap/level_0/StaticBody2DForGround"]
 polygon = PoolVector2Array( 2440.03, 1219.75, 2440.03, 1280.75, 12799.3, 1274.75, 12799.1, 1158.5, 11954, 1157.3, 10428.1, 1156.11, 10428.1, 1093.84, 10245.5, 1093.84, 10245.5, 1157.3, 8900.55, 1157.3, 8900.55, 1219.57, 6970.86, 1220.77, 6970.86, 1091.44, 6394.73, 1092.04, 6394.94, 963.211, 5186.73, 963.909, 5186.82, 1094.08, 3908.66, 1097.26, 3908.66, 1160.72, 3128.02, 1160.72, 3128.02, 1094.08, 2627.74, 1093.01, 2627.75, 1219.68 )
 
-[node name="StaticBody2DForLevelLimits" type="StaticBody2D" parent="TileMap/level_0"]
+[node name="StaticBody2DForLevelLimits" type="StaticBody2D" parent="LevelTilemap/level_0"]
+editor/display_folded = true
 position = Vector2( -185.008, 891.405 )
 
-<<<<<<< Updated upstream
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/level_0/StaticBody2DForLevelLimits"]
-position = Vector2( 238.822, 15.0686 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/level_0/StaticBody2DForLevelLimits"]
-position = Vector2( 13042.3, 195.785 )
-shape = SubResource( 1 )
-
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 68.2562, 278.905 )
-script = ExtResource( 2 )
-GRAVITY = 250.0
-WALK_FORCE = 150.0
-WALK_MIN_SPEED = 150.0
-WALK_MAX_SPEED = 230.0
-JUMP_SPEED = 300.0
-JUMP_MAX_AIRBORNE_TIME = 0.5
-
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 13.5623, 13.9138 )
-scale = Vector2( 0.319704, 0.327428 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 12.3226, 14.5442 )
-shape = SubResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 153.657, 20.0422 )
-current = true
-=======
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForLevelLimits"]
 position = Vector2( 305, -10 )
 shape = SubResource( 4 )
@@ -718,6 +697,33 @@ lifes_to_show = ExtResource( 17 )
 [node name="GUI" type="CanvasLayer" parent="." groups=[
 "GUI",
 ]]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 470.0
+margin_top = 6.0
+margin_right = -359.0
+margin_bottom = -485.0
+custom_fonts/normal_font = SubResource( 40 )
+custom_colors/default_color = Color( 0.854902, 0.113725, 0.564706, 1 )
+script = ExtResource( 19 )
+
+[node name="Timer" type="Timer" parent="GUI/RichTextLabel"]
+autostart = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GUI"]
+pause_mode = 2
+visible = false
+margin_left = 418.0
+margin_top = 283.0
+margin_right = 702.0
+margin_bottom = 358.0
+custom_fonts/normal_font = SubResource( 41 )
+custom_colors/default_color = Color( 0.854902, 0.113725, 0.564706, 1 )
+text = "Pause"
+script = ExtResource( 20 )
 [connection signal="body_entered" from="Water/Area2D" to="Water/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="ExitLevel" to="ExitLevel" method="_on_ExitLevel_body_entered"]
->>>>>>> Stashed changes
+[connection signal="timeout" from="GUI/RichTextLabel/Timer" to="GUI/RichTextLabel" method="_on_Timer_timeout"]

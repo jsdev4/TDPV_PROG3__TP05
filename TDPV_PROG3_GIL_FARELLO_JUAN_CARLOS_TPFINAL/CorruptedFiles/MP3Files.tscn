@@ -55,3 +55,5 @@ disabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
 position = Vector2( 1.43384, 5.01877 )
 shape = SubResource( 3 )
+[connection signal="body_entered" from="KinematicBody2D/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="KinematicBody2D/Area2D" to="." method="_on_Area2D_body_exited"]

@@ -1,35 +1,22 @@
 extends KinematicBody2D
 tool
 export(float) var GRAVITY = 400
-export(float) var FLOOR_ANGLE_TOLERANCE = 40
 export(float) var WALK_FORCE =20
 export(float) var WALK_MIN_SPEED = 10
 export(float) var WALK_MAX_SPEED = 70
 export(float) var STOP_FORCE = 800
 export(float) var JUMP_SPEED = 80 setget _set_jump_speed
 export(float) var JUMP_MAX_AIRBORNE_TIME = 0.4
-<<<<<<< Updated upstream
-export(float) var  SLIDE_STOP_VELOCITY = 1.0 # One pixel per second
-export(float) var  SLIDE_STOP_MIN_TRAVEL = 1.0
-=======
 export (PackedScene)var file_converter
 export (PackedScene) var lifes_to_show
 var offset_for_lifes=50
 var lifes_list=[]
 signal random_file_converter
->>>>>>> Stashed changes
 var velocity = Vector2()
 var on_air_time = 1
 var jumping = false
 var jump_curve = PoolVector2Array()
-signal im_dead
 var flipped=Vector2()
-<<<<<<< Updated upstream
-#var color_to_change=Color()
-
-func _ready():
-	flipped.y=0
-=======
 export var lifes=5
 var can_fire
 var timer_for_can_fire
@@ -40,7 +27,6 @@ func _ready():
 	can_fire=true
 	timer_for_can_fire=0
 
->>>>>>> Stashed changes
 	emit_signal("draw")
 	#color_to_change=Color(1,1,1,1)
 	if Engine.editor_hint: #para que haga draw sólo en tool mode
@@ -51,19 +37,18 @@ func _ready():
 func _physics_process(delta):
 	if Engine.editor_hint: 
 		return
-		emit_signal("move_me")
+#		emit_signal("move_me")
 	var force = Vector2(0, GRAVITY)
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_just_pressed("jump")
-	var animation
+	var fire=Input.is_action_just_released("fire")
+	#var hide=Input.is_action_pressed("Hide")
+#	var animation
 	var sprite
 	var stop = true
 	var material=get_node("Sprite").get_material()
 	
-<<<<<<< Updated upstream
-	
-=======
 	if hitted==true:
 		$Particles2D.emitting=true
 		material.set_shader_param("glow",1.0)
@@ -74,13 +59,13 @@ func _physics_process(delta):
 	
 	if lifes==0:
 		get_tree().reload_current_scene()
->>>>>>> Stashed changes
 #	animation=get_node("AnimationPlayer")
 	sprite= get_node("Sprite")
 	if (walk_left):
 		stop = false
 		flipped.x=-10
-		sprite.flip_h=true
+		sprite.flip_h=true	
+	
 		#if(animation.is_playing()&&stop==false):
 		#		animation.play("Running")
 		if (velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED):
@@ -117,8 +102,6 @@ func _physics_process(delta):
 		
 			
 	#material.set_shader_param("received_color",color_to_change)
-<<<<<<< Updated upstream
-=======
 	#if(hide):
 	#	timer_for_hide+=delta
 	#	emit_signal("is_hiding")
@@ -153,11 +136,8 @@ func _physics_process(delta):
 		if timer_for_can_fire>1:
 			timer_for_can_fire=0
 			can_fire=true
->>>>>>> Stashed changes
 	get_node("Sprite").update()
-		
 	velocity += force*delta
-	var motion = velocity*delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	if is_on_floor():
 		on_air_time = 0
@@ -169,7 +149,6 @@ func _physics_process(delta):
 	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping):
 		velocity.y = -JUMP_SPEED
 		jumping = true
-		
 	on_air_time += delta
 func calculate_jump_curve():
 	var t = 2*JUMP_SPEED/GRAVITY
@@ -182,9 +161,6 @@ func _set_jump_speed(js):
 	JUMP_SPEED = js
 	calculate_jump_curve()
 	update()
-<<<<<<< Updated upstream
-	
-=======
 	
 	
 func _respawn():
@@ -211,4 +187,3 @@ func add_lifes():
 	get_tree().get_nodes_in_group("GUI")[0].add_child(new_lifes)
 	new_lifes.global_position.x+=offset_for_lifes*(lifes-1)
 	lifes_list[lifes].append(new_lifes)
->>>>>>> Stashed changes
