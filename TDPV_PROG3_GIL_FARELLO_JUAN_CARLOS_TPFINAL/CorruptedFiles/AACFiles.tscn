@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/CorruptedFiles/files_script.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/aac_spritesheet.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.78913, 7.43499 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 25.9137, 24.7196 )
+
+[node name="AACFiles" type="PathFollow2D"]
+rotate = false
+script = ExtResource( 1 )
+direction = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+editor/display_folded = true
+texture = ExtResource( 2 )
+hframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D/Sprite"]
+autoplay = "Idle"
+anims/Idle = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -4.90555, -2.2641 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
+position = Vector2( -10.7647, -1.75239 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="KinematicBody2D/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="KinematicBody2D/Area2D" to="." method="_on_Area2D_body_exited"]

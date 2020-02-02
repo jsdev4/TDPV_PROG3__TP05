@@ -1,9 +1,3 @@
-added tiled imported
-https://godotengine.org/asset-library/asset/158
-https://www.gamefromscratch.com/post/2017/07/05/Godot-Tutorial-Using-Add-Ons.aspx
-https://docs.godotengine.org/en/3.1/tutorials/plugins/editor/import_plugins.html
-
-
 art
 https://opengameart.org/content/bus
 https://opengameart.org/content/cyberpunk-tiles
@@ -12,3 +6,27 @@ https://creativecommons.org/licenses/by/3.0/
 https://vxresource.wordpress.com/2010/03/17/the-real-macks-tileset/
 https://opengameart.org/content/sci-fi-interior-tiles
 https://www.deviantart.com/nicnubill
+
+background:
+https://www.artstation.com/artwork/RYwJ1E
+
+icons for audio converters in game, also license details:
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+
+icons for audio files, free use:
+https://www.kindpng.com/imgv/iboxRh_audio-files-audio-file-icon-png-transparent-png/
+audio converted icons
+https://www.kindpng.com/imgv/wTTTw_multimedia-player-audio-icons-png-transparent-png/
+https://www.kindpng.com/imgv/hobmmm_audio-imagenes-png-de-audio-transparent-png/
+https://commons.wikimedia.org/wiki/File:HTML5_audio_icon.svg
+https://en.wikipedia.org/wiki/GNOME_SoundConverter
+followed tutorials:
+https://www.youtube.com/playlist?list=PLdl7tDMyY4Q3dunDj0Hij7n9ofxs-c3kZ
+
+added tiled imported
+https://godotengine.org/asset-library/asset/158
+https://www.gamefromscratch.com/post/2017/07/05/Godot-Tutorial-Using-Add-Ons.aspx
+https://docs.godotengine.org/en/3.1/tutorials/plugins/editor/import_plugins.html
+
+fonts
+https://www.dafont.com/es/blade-runner-movie-font.font
