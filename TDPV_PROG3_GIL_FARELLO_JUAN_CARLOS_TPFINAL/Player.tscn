@@ -1,0 +1,112 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Shaders/player_hitted.shader" type="Shader" id=1]
+[ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://FileConverters/FileConverters.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Images/dummy_for_test.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/file_converter0.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sound/pla_step2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sound/gun_idle1.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sound/wep_noammo.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sound/pla_jump1.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sound/pla_step1.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Sound/tnk_pain.wav" type="AudioStream" id=11]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/received_color = Plane( 1, 1, 1, 1 )
+shader_param/glow = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/received_color = Plane( 1, 1, 1, 1 )
+shader_param/glow = 0.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10.5675, 48.6369 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 40.0
+flag_align_y = true
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 250, 0 )
+initial_velocity = -250.0
+initial_velocity_random = 0.5
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+radial_accel = 20.0
+angle = 256.5
+angle_random = 0.3
+scale = 0.2
+scale_random = 0.66
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
+material = SubResource( 1 )
+position = Vector2( 400.159, 255.105 )
+script = ExtResource( 2 )
+GRAVITY = 250.0
+WALK_FORCE = 150.0
+WALK_MIN_SPEED = 150.0
+WALK_MAX_SPEED = 230.0
+JUMP_SPEED = 300.0
+JUMP_MAX_AIRBORNE_TIME = 0.5
+file_converter = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 13.5623, 13.9138 )
+scale = Vector2( 0.319704, 0.327428 )
+texture = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 153.657, 20.0422 )
+current = true
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 71.447, -8.29916 )
+
+[node name="Position2D2" type="Position2D" parent="."]
+position = Vector2( -47.3858, -6.97879 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 13.2682, 14.595 )
+shape = SubResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 5.8653, 15.975 )
+emitting = false
+amount = 20
+lifetime = 2.0
+preprocess = 10.0
+explosiveness = 0.86
+randomness = 1.0
+draw_order = 1
+process_material = SubResource( 4 )
+texture = ExtResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="FireSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="NoFireSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="OnGroundStep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Hitted" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="Listener" type="Listener" parent="."]
+current = true

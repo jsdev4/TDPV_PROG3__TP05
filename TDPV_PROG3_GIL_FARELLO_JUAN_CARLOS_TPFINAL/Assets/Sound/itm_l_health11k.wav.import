@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/itm_l_health11k.wav-1daa1fd9eb0164bc1919c7b3cc529553.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/itm_l_health11k.wav"
+dest_files=[ "res://.import/itm_l_health11k.wav-1daa1fd9eb0164bc1919c7b3cc529553.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

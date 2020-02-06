@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/10 - the reaction.ogg-df3b5f5096553c49c4f7808e5d992d9f.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/10 - the reaction.ogg"
+dest_files=[ "res://.import/10 - the reaction.ogg-df3b5f5096553c49c4f7808e5d992d9f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
