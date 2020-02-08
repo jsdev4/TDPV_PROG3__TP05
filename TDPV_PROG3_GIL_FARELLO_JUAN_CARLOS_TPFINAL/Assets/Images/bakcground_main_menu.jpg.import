@@ -2,33 +2,33 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dummy_for_test.png-dffdfd9456bf72f0bcc8d6aa9a27a762.stex"
+path="res://.import/bakcground_main_menu.jpg-2063c52508c8c565db4e0ea80ee9f310.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/dummy_for_test.png"
-dest_files=[ "res://.import/dummy_for_test.png-dffdfd9456bf72f0bcc8d6aa9a27a762.stex" ]
+source_file="res://Assets/Images/bakcground_main_menu.jpg"
+dest_files=[ "res://.import/bakcground_main_menu.jpg-2063c52508c8c565db4e0ea80ee9f310.stex" ]
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

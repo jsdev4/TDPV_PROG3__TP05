@@ -35,3 +35,6 @@ https://www.urbanfonts.com/fonts/Turbo_Charge_Chrome_Italic.font
 
 sound
 https://www.sounds-resource.com/playstation/quakeii/sound/8592/
+music
+http://www.vgmpf.com/Wiki/index.php?title=MegaRace_(DOS)
+https://downloads.khinsider.com/game-soundtracks/album/quake-i-original-soundtrack

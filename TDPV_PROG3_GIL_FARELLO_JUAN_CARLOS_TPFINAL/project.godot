@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TDPV_PROG3_GIL_FARELLO_JUAN_CARLOS_TPFINAL"
-run/main_scene="res://level0_demo.tscn"
+run/main_scene="res://Mainmenu.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
 

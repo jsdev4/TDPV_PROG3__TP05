@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/MainMenu/mainmenu_script.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/bakcground_main_menu.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/background_for_pause.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Fonts/turbochargehalfital.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Fonts/Streamster.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Fonts/BLADRMF_.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Music/109_-_Abuse_-_DOS_-_Music_8.ogg" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 36
+font_data = ExtResource( 6 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="bakcground_main_menu" type="Sprite" parent="Sprite"]
+position = Vector2( 509.945, 300.856 )
+scale = Vector2( 0.753625, 0.782618 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="Sprite"]
+modulate = Color( 1, 0, 0.843137, 1 )
+self_modulate = Color( 1, 0, 0.843137, 1 )
+position = Vector2( 510.715, 305.023 )
+scale = Vector2( 4.02853, 2.36661 )
+texture = ExtResource( 3 )
+
+[node name="GameTitle02" type="Label" parent="."]
+margin_left = 323.444
+margin_top = 102.805
+margin_right = 568.444
+margin_bottom = 239.805
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0.890196, 1 )
+text = "City"
+
+[node name="GameTitle" type="Label" parent="."]
+margin_left = 304.474
+margin_top = 65.069
+margin_right = 589.474
+margin_bottom = 237.069
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.141176, 0.972549, 0.737255, 1 )
+text = "Stereo"
+
+[node name="Play" type="Label" parent="."]
+margin_left = 485.298
+margin_top = 212.877
+margin_right = 660.298
+margin_bottom = 275.878
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0.890196, 1 )
+text = "Play"
+
+[node name="Options" type="Label" parent="."]
+margin_left = 487.797
+margin_top = 283.884
+margin_right = 662.797
+margin_bottom = 337.884
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0, 0.890196, 1 )
+text = "Options"
+
+[node name="Quit" type="Label" parent="."]
+margin_left = 488.555
+margin_top = 354.935
+margin_right = 580.555
+margin_bottom = 395.935
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0.890196, 1 )
+text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -5.0
+autoplay = true

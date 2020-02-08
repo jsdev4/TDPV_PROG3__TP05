@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Scripts/MainAndNavigation/main_script.gd" type="Script" id=1]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=2]
@@ -17,11 +17,10 @@
 [ext_resource path="res://CorruptedFiles/WavFiles.tscn" type="PackedScene" id=15]
 [ext_resource path="res://CorruptedFiles/AIFFfiles.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=17]
-[ext_resource path="res://GUI/Lifes.tscn" type="PackedScene" id=18]
-[ext_resource path="res://FileConverters/Reloader.tscn" type="PackedScene" id=19]
-[ext_resource path="res://FileConverters/LifeUp.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Assets/Music/10 - the reaction.ogg" type="AudioStream" id=21]
-[ext_resource path="res://Assets/Music/04_-_MegaRace_-_DOS_-_Skyholder.ogg" type="AudioStream" id=22]
+[ext_resource path="res://FileConverters/Reloader.tscn" type="PackedScene" id=18]
+[ext_resource path="res://FileConverters/LifeUp.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/Music/10 - the reaction.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Assets/Music/103_-_Abuse_-_DOS_-_Music_2.ogg" type="AudioStream" id=21]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -477,7 +476,6 @@ tile_data = PoolIntArray( -130905, 0, 0, -65421, 0, 0, -65409, 0, 0, 32, 0, 0, 5
 script = ExtResource( 12 )
 
 [node name="CorruptedFiles" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 1090.45, -148.77 )
 
 [node name="Files" type="Path2D" parent="CorruptedFiles"]
@@ -608,7 +606,6 @@ rotation = 0.0
 rotate = false
 
 [node name="Files16" type="Path2D" parent="CorruptedFiles"]
-editor/display_folded = true
 curve = SubResource( 38 )
 
 [node name="AIFFfiles" parent="CorruptedFiles/Files16" instance=ExtResource( 16 )]
@@ -624,52 +621,50 @@ position = Vector2( 11460.9, 561.685 )
 rotate = false
 
 [node name="Player" parent="." instance=ExtResource( 17 )]
-lifes_to_show = ExtResource( 18 )
 
 [node name="CollectableItems" type="Node2D" parent="."]
-editor/display_folded = true
 
-[node name="Reloader" parent="CollectableItems" instance=ExtResource( 19 )]
+[node name="Reloader" parent="CollectableItems" instance=ExtResource( 18 )]
 position = Vector2( 2120.32, -33.9804 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader2" parent="CollectableItems" instance=ExtResource( 19 )]
+[node name="Reloader2" parent="CollectableItems" instance=ExtResource( 18 )]
 position = Vector2( 3358.6, 21.9418 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader3" parent="CollectableItems" instance=ExtResource( 19 )]
+[node name="Reloader3" parent="CollectableItems" instance=ExtResource( 18 )]
 position = Vector2( 4924.42, 345.492 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader4" parent="CollectableItems" instance=ExtResource( 19 )]
+[node name="Reloader4" parent="CollectableItems" instance=ExtResource( 18 )]
 position = Vector2( 5575.51, -301.608 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader5" parent="CollectableItems" instance=ExtResource( 19 )]
+[node name="Reloader5" parent="CollectableItems" instance=ExtResource( 18 )]
 position = Vector2( 6494.24, 337.503 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader6" parent="CollectableItems" instance=ExtResource( 19 )]
+[node name="Reloader6" parent="CollectableItems" instance=ExtResource( 18 )]
 position = Vector2( 8367.63, -173.786 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader7" parent="CollectableItems" instance=ExtResource( 19 )]
+[node name="Reloader7" parent="CollectableItems" instance=ExtResource( 18 )]
 position = Vector2( 10452.7, -109.875 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader8" parent="CollectableItems" instance=ExtResource( 19 )]
+[node name="Reloader8" parent="CollectableItems" instance=ExtResource( 18 )]
 position = Vector2( 12102.4, 81.8586 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="LifeUp" parent="CollectableItems" instance=ExtResource( 20 )]
+[node name="LifeUp" parent="CollectableItems" instance=ExtResource( 19 )]
 position = Vector2( 5840.56, -434.278 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="LifeUp2" parent="CollectableItems" instance=ExtResource( 20 )]
-position = Vector2( 9019.17, -19.4811 )
+[node name="LifeUp2" parent="CollectableItems" instance=ExtResource( 19 )]
+position = Vector2( 9858.95, 21.6268 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="LifeUp3" parent="CollectableItems" instance=ExtResource( 20 )]
+[node name="LifeUp3" parent="CollectableItems" instance=ExtResource( 19 )]
 position = Vector2( 11729.4, 77.4927 )
 scale = Vector2( 0.5, 0.5 )
 
@@ -680,12 +675,12 @@ position = Vector2( 403.644, 274.202 )
 position = Vector2( 697.347, 400.282 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 21 )
+stream = ExtResource( 20 )
 volume_db = -15.0
 autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 22 )
+stream = ExtResource( 21 )
 volume_db = -5.0
 autoplay = true
 [connection signal="body_entered" from="Water/Area2D" to="Water/Area2D" method="_on_Area2D_body_entered"]

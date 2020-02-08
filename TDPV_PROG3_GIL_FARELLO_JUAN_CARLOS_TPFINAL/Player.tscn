@@ -1,16 +1,17 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Shaders/player_hitted.shader" type="Shader" id=1]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://FileConverters/FileConverters.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Images/dummy_for_test.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Images/file_converter0.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sound/pla_step2.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Sound/gun_idle1.wav" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Sound/wep_noammo.wav" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Sound/pla_jump1.wav" type="AudioStream" id=9]
-[ext_resource path="res://Assets/Sound/pla_step1.wav" type="AudioStream" id=10]
-[ext_resource path="res://Assets/Sound/tnk_pain.wav" type="AudioStream" id=11]
+[ext_resource path="res://GUI/Lifes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Images/dummy_for_test.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/file_converter0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sound/pla_step2.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sound/gun_idle1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sound/wep_noammo.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sound/pla_jump1.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Sound/pla_step1.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Sound/tnk_pain.wav" type="AudioStream" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -44,6 +45,56 @@ angle_random = 0.3
 scale = 0.2
 scale_random = 0.66
 
+[sub_resource type="Animation" id=5]
+resource_name = "Idle"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Jumping"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7 ]
+}
+
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
@@ -52,21 +103,25 @@ position = Vector2( 400.159, 255.105 )
 script = ExtResource( 2 )
 GRAVITY = 250.0
 WALK_FORCE = 150.0
-WALK_MIN_SPEED = 150.0
-WALK_MAX_SPEED = 230.0
+WALK_MIN_SPEED = 100.0
+WALK_MAX_SPEED = 350.0
 JUMP_SPEED = 300.0
 JUMP_MAX_AIRBORNE_TIME = 0.5
 file_converter = ExtResource( 3 )
+lifes_to_show = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 153.657, 20.0422 )
+current = true
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
 position = Vector2( 13.5623, 13.9138 )
 scale = Vector2( 0.319704, 0.327428 )
-texture = ExtResource( 4 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 153.657, 20.0422 )
-current = true
+texture = ExtResource( 5 )
+vframes = 3
+hframes = 4
+frame = 6
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 71.447, -8.29916 )
@@ -88,25 +143,30 @@ explosiveness = 0.86
 randomness = 1.0
 draw_order = 1
 process_material = SubResource( 4 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-
-[node name="FireSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
-[node name="NoFireSound" type="AudioStreamPlayer" parent="."]
+[node name="FireSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
-[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+[node name="NoFireSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 
-[node name="OnGroundStep" type="AudioStreamPlayer" parent="."]
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 
-[node name="Hitted" type="AudioStreamPlayer" parent="."]
+[node name="OnGroundStep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+
+[node name="Hitted" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 
 [node name="Listener" type="Listener" parent="."]
 current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 5 )
+anims/Jumping = SubResource( 6 )
+anims/Running = SubResource( 7 )

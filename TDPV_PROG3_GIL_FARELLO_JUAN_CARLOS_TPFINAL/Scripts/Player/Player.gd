@@ -31,6 +31,8 @@ export var files_availables=10
 var play_jump_sound
 var play_walking_sound
 var can_play_walking_sound
+
+
 func _ready():
 	flipped.y=0
 	can_fire=true
@@ -41,6 +43,7 @@ func _ready():
 	timer_for_can_fire=0
 	files_converted=0
 	emit_signal("draw")
+	
 	files_availables_to_show=connect("number_of_files",get_node("../GUI/FilesAvailable"),"decrease_files_available")
 	files_availables_to_show_reload=connect("number_of_files_increase",get_node("../GUI/FilesAvailable"),"increase_files_available")
 
@@ -57,29 +60,27 @@ func _physics_process(delta):
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_just_pressed("jump")
 	var fire=Input.is_action_just_released("fire")
-#	var animation
 	var sprite
+	var animation
 	var stop = true
-	#var material=get_node("Sprite").get_material()
-	
+	sprite= get_node("Sprite")
+	animation=get_node("AnimationPlayer")
 	if hitted==true:
 		$Particles2D.emitting=true
-
 	if hitted==false:
 		$Particles2D.emitting=false
 	
 	if lifes==0:
 		restart=get_tree().reload_current_scene()
-#	animation=get_node("AnimationPlayer")
-	sprite= get_node("Sprite")
+	
 	
 	if (walk_left):
 		stop = false
 		flipped.x=-10
 		sprite.flip_h=true	
 		can_play_walking_sound=true
-		#if(animation.is_playing()&&stop==false):
-		#		animation.play("Running")
+		if(animation.is_playing()&&stop==false):
+			animation.play("Running")
 		if (velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED):
 			force.x -= WALK_FORCE
 	elif (walk_right):
@@ -89,8 +90,8 @@ func _physics_process(delta):
 		can_play_walking_sound=true
 		if (velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED):
 			force.x += WALK_FORCE
-			#if(animation.is_playing()&&stop==false):
-			#	animation.play("Running")
+			if(animation.is_playing()&&stop==false):
+				animation.play("Running")
 				
 	if (stop):
 		var vsign = sign(velocity.x)
@@ -100,9 +101,8 @@ func _physics_process(delta):
 			vlen = 0
 		velocity.x = vlen*vsign
 		can_play_walking_sound=false
-		#animation.play("Idle")
-	#material.set_shader_param("received_color",color_to_change)
-	
+		animation.play("Idle")
+
 	if can_fire==true&&files_availables>0:
 		if fire&&sprite.flip_h==false:
 			files_availables-=1
@@ -141,7 +141,8 @@ func _physics_process(delta):
 	get_node("Sprite").update()
 	velocity += force*delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-	if is_on_floor():
+	if is_on_floor()&&walk_left||is_on_floor()&&walk_right:
+		animation.play("Running")
 		if can_play_walking_sound==true:
 			play_walking_sound+=delta
 			if play_walking_sound>0.3:
@@ -151,11 +152,13 @@ func _physics_process(delta):
 			$OnGroundStep.play()
 			play_jump_sound=false
 		on_air_time = 0
-	#else:
-	#	animation.play("jumping")
+	elif is_on_floor()&&stop:
+		animation.play("Idle")
+	else:
+		animation.play("Jumping")
 	if jumping and velocity.y > 0:
 		jumping = false
-		
+		animation.play("Jumping")
 	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not jumping):
 		velocity.y = -JUMP_SPEED
 		$JumpSound.play()
