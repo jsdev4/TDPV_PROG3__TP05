@@ -184,7 +184,10 @@ func quit_life():
 	hitted=false
 	for i in 1:
 		lifes-=1
+<<<<<<< Updated upstream
 	if lifes>=0:
+=======
+>>>>>>> Stashed changes
 		lifes_list[lifes].queue_free()
 		print (lifes)
 
@@ -204,4 +207,22 @@ func add_lifes():
 	
 func reloader():
 	files_availables+=10
+<<<<<<< Updated upstream
 	print (files_availables)
+=======
+	increase_files_availables()
+	print (files_availables)
+	
+#for tested purposes#
+func increase_score():
+	files_converted+=1
+	print(files_converted)
+
+func decrease_files_availables():
+	emit_signal("number_of_files")
+func increase_files_availables():
+	emit_signal("number_of_files_increase")
+func set_no_movement():
+	WALK_FORCE=0
+	WALK_MAX_SPEED=0
+>>>>>>> Stashed changes

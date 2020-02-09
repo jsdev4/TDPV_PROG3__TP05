@@ -93,7 +93,7 @@ extents = Vector2( 93.4668, 27.655 )
 extents = Vector2( 63.4248, 33.2055 )
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 27.6846, 31.643 )
+extents = Vector2( 37.458, 70.1953 )
 
 [sub_resource type="TileSet" id=22]
 0/name = "b88de1b111daedfce7da2198ad4e4917.jpg 0"
@@ -284,13 +284,16 @@ position = Vector2( 19.0535, 44.6952 )
 shape = SubResource( 2 )
 
 [node name="LevelTilemap" type="TileMap" parent="."]
-editor/display_folded = true
 position = Vector2( 41.2534, -4.76001 )
 tile_set = SubResource( 3 )
 format = 1
 
+<<<<<<< Updated upstream
 [node name="level_0" parent="LevelTilemap" instance=ExtResource( 8 )]
 editor/display_folded = true
+=======
+[node name="level_0" parent="LevelTilemap" instance=ExtResource( 10 )]
+>>>>>>> Stashed changes
 position = Vector2( 0, -704 )
 
 [node name="StaticBody2DForGround" type="StaticBody2D" parent="LevelTilemap/level_0" groups=[
@@ -322,7 +325,6 @@ shape = SubResource( 4 )
 [node name="StaticBody2DForPlatformsAndBoxes" type="StaticBody2D" parent="LevelTilemap/level_0" groups=[
 "Platforms",
 ]]
-editor/display_folded = true
 
 [node name="Platform0" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 1663.61, 929.61 )
@@ -452,20 +454,20 @@ polygon = PoolVector2Array( 6149.4, 834.748, 6150.4, 961.747, 6333.4, 961.747, 6
 [node name="Box09" type="CollisionPolygon2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
 polygon = PoolVector2Array( 10371.6, 961.519, 10371.6, 1028.06, 10308.1, 1028.06, 10308.9, 1089.97, 10428.5, 1090.03, 10428.1, 961.379 )
 
-[node name="Box10" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 11168.5, 1121.3 )
-shape = SubResource( 21 )
-
 [node name="Box11" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 11485.8, 1121.89 )
+position = Vector2( 11493.8, 1087.39 )
 shape = SubResource( 21 )
 
 [node name="Box12" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
-position = Vector2( 11168.6, 1056.57 )
+position = Vector2( 11164.6, 1087.09 )
 shape = SubResource( 21 )
 
 [node name="Box13" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 9440.51, 927.375 )
+shape = SubResource( 21 )
+
+[node name="Box14" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
+position = Vector2( 12500, 1148.58 )
 shape = SubResource( 21 )
 
 [node name="Speakers" type="TileMap" parent="."]
@@ -617,13 +619,13 @@ position = Vector2( 10439.3, 490.108 )
 rotate = false
 
 [node name="Files17" type="Path2D" parent="CorruptedFiles"]
-editor/display_folded = true
 curve = SubResource( 39 )
 
 [node name="AIFFfiles" parent="CorruptedFiles/Files17" instance=ExtResource( 14 )]
 position = Vector2( 11460.9, 561.685 )
 rotate = false
 
+<<<<<<< Updated upstream
 [node name="Player" parent="." instance=ExtResource( 15 )]
 lifes_to_show = ExtResource( 16 )
 
@@ -658,6 +660,10 @@ custom_fonts/normal_font = SubResource( 41 )
 custom_colors/default_color = Color( 0.854902, 0.113725, 0.564706, 1 )
 text = "Pause"
 script = ExtResource( 19 )
+=======
+[node name="Player" parent="." instance=ExtResource( 17 )]
+position = Vector2( 362.308, 283.196 )
+>>>>>>> Stashed changes
 
 [node name="CollectableItems" type="Node2D" parent="."]
 
