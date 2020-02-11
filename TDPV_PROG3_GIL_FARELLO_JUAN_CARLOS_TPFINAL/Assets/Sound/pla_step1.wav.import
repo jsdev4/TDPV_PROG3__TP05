@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pla_step1.wav-e1e0a02b10b1676866e1441b38a24b63.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/pla_step1.wav"
+dest_files=[ "res://.import/pla_step1.wav-e1e0a02b10b1676866e1441b38a24b63.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

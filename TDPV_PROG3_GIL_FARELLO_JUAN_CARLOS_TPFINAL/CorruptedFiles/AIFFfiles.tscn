@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/CorruptedFiles/files_script.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/aiff_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sound/sol_idle1.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -38,7 +39,9 @@ shape = SubResource( 1 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+editor/display_folded = true
 rotation = 3.14159
+scale = Vector2( 1.5, 1.3 )
 texture = ExtResource( 2 )
 hframes = 4
 frame = 3
@@ -47,11 +50,24 @@ frame = 3
 autoplay = "Idle"
 anims/Idle = SubResource( 2 )
 
+<<<<<<< Updated upstream
 [node name="Area2D" type="Area2D" parent="KinematicBody2D"]
 priority = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
 position = Vector2( 4.64502, 1.53998 )
+=======
+[node name="Area2D_especial" type="Area2D" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D_especial"]
+position = Vector2( 4.63525, 1.38231 )
+>>>>>>> Stashed changes
 shape = SubResource( 3 )
-[connection signal="body_entered" from="KinematicBody2D/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="KinematicBody2D/Area2D" to="." method="_on_Area2D_body_exited"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -7.0
+autoplay = true
+max_distance = 500.0
+[connection signal="body_entered" from="KinematicBody2D/Area2D_especial" to="." method="_on_Area2D_especial_body_entered"]
+[connection signal="body_exited" from="KinematicBody2D/Area2D_especial" to="." method="_on_Area2D_especial_body_exited"]

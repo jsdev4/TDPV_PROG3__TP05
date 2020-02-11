@@ -6,6 +6,10 @@ var timer
 var is_touching_something
 var rotate
 var direction_for_rotation
+<<<<<<< Updated upstream:TDPV_PROG3_GIL_FARELLO_JUAN_CARLOS_TPFINAL/Scripts/FileConverters/file_converter.gd
+=======
+var type_file_converter
+>>>>>>> Stashed changes:TDPV_PROG3_GIL_FARELLO_JUAN_CARLOS_TPFINAL/Scripts/FileConvertersAndLifeItems/file_converter.gd
 func _ready():
 	timer=0
 	is_touching_something=false

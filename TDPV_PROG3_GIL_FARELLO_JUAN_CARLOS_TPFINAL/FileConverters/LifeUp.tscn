@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/FileConvertersAndLifeItems/lifeup_script.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/lifes_up.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sound/itm_l_health11k.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 84.9348, 70.6687 )
+
+[node name="LifeUp" type="Area2D"]
+script = ExtResource( 1 )
+velocity1 = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Collected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+[connection signal="body_entered" from="." to="." method="_on_LifeUp_body_entered"]
