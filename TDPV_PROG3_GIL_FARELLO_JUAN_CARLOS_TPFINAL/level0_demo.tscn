@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scripts/MainAndNavigation/main_script.gd" type="Script" id=1]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=2]
@@ -15,14 +15,12 @@
 [ext_resource path="res://CorruptedFiles/AACFiles.tscn" type="PackedScene" id=13]
 [ext_resource path="res://CorruptedFiles/MP3Files.tscn" type="PackedScene" id=14]
 [ext_resource path="res://CorruptedFiles/WavFiles.tscn" type="PackedScene" id=15]
-[ext_resource path="res://CorruptedFiles/AIFFfiles.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=17]
-[ext_resource path="res://FileConverters/Reloader.tscn" type="PackedScene" id=18]
-[ext_resource path="res://FileConverters/LifeUp.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=16]
+[ext_resource path="res://FileConverters/Reloader.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scripts/MainAndNavigation/messages_in_game_script.gd" type="Script" id=18]
+[ext_resource path="res://Assets/Fonts/BLADRMF_.TTF" type="DynamicFontData" id=19]
 [ext_resource path="res://Assets/Music/10 - the reaction.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Assets/Music/103_-_Abuse_-_DOS_-_Music_2.ogg" type="AudioStream" id=21]
-[ext_resource path="res://Scripts/MainAndNavigation/messages_in_game_script.gd" type="Script" id=22]
-[ext_resource path="res://Assets/Fonts/BLADRMF_.TTF" type="DynamicFontData" id=23]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -204,46 +202,41 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 7113.62, 115.823, 0, 0, 0, 0, 6343.05, 113.665 )
 }
 
-[sub_resource type="Curve2D" id=36]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 7298.57, 183.039, 0, 0, 0, 0, 8453.42, 180.249 )
-}
-
 [sub_resource type="Curve2D" id=37]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 7362.16, 623.575, 0, 0, 0, 0, 6402.86, 623.575 )
+"points": PoolVector2Array( 0, 0, 0, 0, 7880.35, 625.071, 0, 0, 0, 0, 6401.42, 619.592 )
 }
 
-[sub_resource type="Curve2D" id=38]
+[sub_resource type="Curve2D" id=44]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 10439.3, 490.108, 0, 0, 0, 0, 10114.8, 490.587 )
+"points": PoolVector2Array( 0, 0, 0, 0, 10438.2, 559.508, 0, 0, 0, 0, 10106.1, 565.661 )
 }
 
-[sub_resource type="Curve2D" id=39]
+[sub_resource type="Curve2D" id=45]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 11460.9, 561.685, 0, 0, 0, 0, 10429.5, 564.939 )
+"points": PoolVector2Array( 0, 0, 0, 0, 11460.4, 488.373, 0, 0, 0, 0, 10439.7, 491.093 )
 }
 
-[sub_resource type="DynamicFont" id=40]
+[sub_resource type="DynamicFont" id=38]
 size = 12
-font_data = ExtResource( 23 )
+font_data = ExtResource( 19 )
 
-[sub_resource type="RectangleShape2D" id=41]
+[sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 20.8648, 67.7842 )
 
-[sub_resource type="RectangleShape2D" id=42]
+[sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 153.077, 120.097 )
 
-[sub_resource type="DynamicFont" id=43]
+[sub_resource type="DynamicFont" id=41]
 size = 10
-font_data = ExtResource( 23 )
+font_data = ExtResource( 19 )
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=42]
 extents = Vector2( 97.9968, 88.4125 )
 
-[sub_resource type="DynamicFont" id=45]
+[sub_resource type="DynamicFont" id=43]
 size = 12
-font_data = ExtResource( 23 )
+font_data = ExtResource( 19 )
 
 [node name="Level0" type="Node2D" groups=[
 "Main",
@@ -341,6 +334,7 @@ shape = SubResource( 4 )
 [node name="StaticBody2DForPlatformsAndBoxes" type="StaticBody2D" parent="LevelTilemap/level_0" groups=[
 "Platforms",
 ]]
+editor/display_folded = true
 
 [node name="Platform0" type="CollisionShape2D" parent="LevelTilemap/level_0/StaticBody2DForPlatformsAndBoxes"]
 position = Vector2( 1663.61, 929.61 )
@@ -563,7 +557,7 @@ direction = false
 editor/display_folded = true
 curve = SubResource( 30 )
 
-[node name="AACFiles2" parent="CorruptedFiles/Files08" instance=ExtResource( 13 )]
+[node name="AACFiles" parent="CorruptedFiles/Files08" instance=ExtResource( 13 )]
 position = Vector2( 3590.23, 235.706 )
 direction = false
 
@@ -593,11 +587,11 @@ rotation = 0.0
 rotate = false
 
 [node name="Files12" type="Path2D" parent="CorruptedFiles"]
-editor/display_folded = true
 curve = SubResource( 34 )
 
-[node name="AIFFfiles" parent="CorruptedFiles/Files12" instance=ExtResource( 16 )]
+[node name="WavFiles" parent="CorruptedFiles/Files12" instance=ExtResource( 15 )]
 position = Vector2( 5627.63, -149.217 )
+rotation = 0.0
 rotate = false
 
 [node name="Files13" type="Path2D" parent="CorruptedFiles"]
@@ -609,85 +603,64 @@ position = Vector2( 7113.62, 115.823 )
 direction = false
 
 [node name="Files14" type="Path2D" parent="CorruptedFiles"]
-editor/display_folded = true
-curve = SubResource( 36 )
-
-[node name="AIFFfiles2" parent="CorruptedFiles/Files14" instance=ExtResource( 16 )]
-position = Vector2( 7298.57, 183.039 )
-rotate = false
-direction = true
-
-[node name="Files15" type="Path2D" parent="CorruptedFiles"]
-editor/display_folded = true
 curve = SubResource( 37 )
 
-[node name="WavFiles2" parent="CorruptedFiles/Files15" instance=ExtResource( 15 )]
-position = Vector2( 7362.16, 623.575 )
+[node name="WavFiles" parent="CorruptedFiles/Files14" instance=ExtResource( 15 )]
+position = Vector2( 7880.35, 625.071 )
 rotation = 0.0
 rotate = false
 
+[node name="Files15" type="Path2D" parent="CorruptedFiles"]
+curve = SubResource( 44 )
+
+[node name="MP3Files" parent="CorruptedFiles/Files15" instance=ExtResource( 14 )]
+position = Vector2( 10438.2, 559.508 )
+rotation = 3.12305
+
 [node name="Files16" type="Path2D" parent="CorruptedFiles"]
-curve = SubResource( 38 )
+position = Vector2( -27.918, 0 )
+scale = Vector2( 1.00267, 1 )
+curve = SubResource( 45 )
 
-[node name="AIFFfiles" parent="CorruptedFiles/Files16" instance=ExtResource( 16 )]
-position = Vector2( 10439.3, 490.108 )
-rotate = false
+[node name="AACFiles" parent="CorruptedFiles/Files16" instance=ExtResource( 13 )]
+position = Vector2( 11460.4, 488.373 )
+direction = false
 
-[node name="Files17" type="Path2D" parent="CorruptedFiles"]
-curve = SubResource( 39 )
-
-[node name="AIFFfiles" parent="CorruptedFiles/Files17" instance=ExtResource( 16 )]
-position = Vector2( 11460.9, 561.685 )
-rotate = false
-
-[node name="Player" parent="." instance=ExtResource( 17 )]
+[node name="Player" parent="." instance=ExtResource( 16 )]
 position = Vector2( 376.76, 303.386 )
 
 [node name="CollectableItems" type="Node2D" parent="."]
-editor/display_folded = true
 
-[node name="Reloader" parent="CollectableItems" instance=ExtResource( 18 )]
+[node name="Reloader" parent="CollectableItems" instance=ExtResource( 17 )]
 position = Vector2( 2121.43, -59.4647 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader2" parent="CollectableItems" instance=ExtResource( 18 )]
+[node name="Reloader2" parent="CollectableItems" instance=ExtResource( 17 )]
 position = Vector2( 3357.43, -7.79564 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader3" parent="CollectableItems" instance=ExtResource( 18 )]
+[node name="Reloader3" parent="CollectableItems" instance=ExtResource( 17 )]
 position = Vector2( 4930.96, 319.132 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader4" parent="CollectableItems" instance=ExtResource( 18 )]
+[node name="Reloader4" parent="CollectableItems" instance=ExtResource( 17 )]
 position = Vector2( 5582.19, -319.98 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader5" parent="CollectableItems" instance=ExtResource( 18 )]
+[node name="Reloader5" parent="CollectableItems" instance=ExtResource( 17 )]
 position = Vector2( 6494.24, 326.977 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader6" parent="CollectableItems" instance=ExtResource( 18 )]
+[node name="Reloader6" parent="CollectableItems" instance=ExtResource( 17 )]
 position = Vector2( 8370.35, -187.39 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader7" parent="CollectableItems" instance=ExtResource( 18 )]
+[node name="Reloader7" parent="CollectableItems" instance=ExtResource( 17 )]
 position = Vector2( 10455.9, -124.155 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Reloader8" parent="CollectableItems" instance=ExtResource( 18 )]
+[node name="Reloader8" parent="CollectableItems" instance=ExtResource( 17 )]
 position = Vector2( 12102.4, 67.505 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="LifeUp" parent="CollectableItems" instance=ExtResource( 19 )]
-position = Vector2( 5842.72, -449.387 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="LifeUp2" parent="CollectableItems" instance=ExtResource( 19 )]
-position = Vector2( 9862.65, -0.580261 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="LifeUp3" parent="CollectableItems" instance=ExtResource( 19 )]
-position = Vector2( 11727.5, 60.8374 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="PointForRespawn" type="Position2D" parent="."]
@@ -695,6 +668,59 @@ position = Vector2( 403.644, 274.202 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 697.347, 400.282 )
+
+[node name="Messages" type="Node2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 18 )
+
+[node name="EntryMessage" type="Area2D" parent="Messages"]
+
+[node name="Message" type="Label" parent="Messages/EntryMessage"]
+visible = false
+margin_left = 487.816
+margin_top = 223.375
+margin_right = 932.816
+margin_bottom = 237.375
+custom_fonts/font = SubResource( 38 )
+custom_colors/font_color = Color( 0.509804, 0.701961, 0.72549, 1 )
+text = "This is the entry of Stereo City, continue this way ->"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Messages/EntryMessage"]
+position = Vector2( 462.988, 309.268 )
+shape = SubResource( 39 )
+
+[node name="Warning" type="Area2D" parent="Messages"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Messages/Warning"]
+position = Vector2( 1224.73, 257.941 )
+shape = SubResource( 40 )
+
+[node name="WarningMessage" type="Label" parent="Messages/Warning"]
+visible = false
+margin_left = 920.175
+margin_top = 152.226
+margin_right = 1521.17
+margin_bottom = 166.226
+custom_fonts/font = SubResource( 41 )
+custom_colors/font_color = Color( 0.509804, 0.701961, 0.72549, 1 )
+text = "Corrupted files are passing from speaker to speaker. Launch audio-converters to convert them"
+
+[node name="Items" type="Area2D" parent="Messages"]
+position = Vector2( 1640.11, 112.754 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Messages/Items"]
+position = Vector2( 35.2429, 111.464 )
+shape = SubResource( 42 )
+
+[node name="ItemsMessage" type="Label" parent="Messages/Items"]
+visible = false
+margin_left = -123.064
+margin_top = -45.7095
+margin_right = 551.936
+margin_bottom = -31.7095
+custom_fonts/font = SubResource( 43 )
+custom_colors/font_color = Color( 0.509804, 0.701961, 0.72549, 1 )
+text = "if you run out of converters, there are items that you can collect to get more"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
@@ -705,58 +731,6 @@ autoplay = true
 stream = ExtResource( 21 )
 volume_db = -5.0
 autoplay = true
-
-[node name="Messages" type="Node2D" parent="."]
-script = ExtResource( 22 )
-
-[node name="EntryMessage" type="Area2D" parent="Messages"]
-
-[node name="Message" type="Label" parent="Messages/EntryMessage"]
-visible = false
-margin_left = 487.816
-margin_top = 223.375
-margin_right = 932.816
-margin_bottom = 237.375
-custom_fonts/font = SubResource( 40 )
-custom_colors/font_color = Color( 0.509804, 0.701961, 0.72549, 1 )
-text = "This is the entry of Stereo City, continue this way ->"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Messages/EntryMessage"]
-position = Vector2( 462.988, 309.268 )
-shape = SubResource( 41 )
-
-[node name="Warning" type="Area2D" parent="Messages"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Messages/Warning"]
-position = Vector2( 1224.73, 257.941 )
-shape = SubResource( 42 )
-
-[node name="WarningMessage" type="Label" parent="Messages/Warning"]
-visible = false
-margin_left = 920.175
-margin_top = 152.226
-margin_right = 1521.17
-margin_bottom = 166.226
-custom_fonts/font = SubResource( 43 )
-custom_colors/font_color = Color( 0.509804, 0.701961, 0.72549, 1 )
-text = "Corrupted files are passing from speaker to speaker. Launch audio-converters to convert them"
-
-[node name="Items" type="Area2D" parent="Messages"]
-position = Vector2( 1640.11, 112.754 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Messages/Items"]
-position = Vector2( 35.2429, 111.464 )
-shape = SubResource( 44 )
-
-[node name="ItemsMessage" type="Label" parent="Messages/Items"]
-visible = false
-margin_left = -123.064
-margin_top = -45.7095
-margin_right = 551.936
-margin_bottom = -31.7095
-custom_fonts/font = SubResource( 45 )
-custom_colors/font_color = Color( 0.509804, 0.701961, 0.72549, 1 )
-text = "if you run out of converters, there are items that you can collect to get more"
 [connection signal="body_entered" from="Water/Area2D" to="Water/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="ExitLevel" to="ExitLevel" method="_on_ExitLevel_body_entered"]
 [connection signal="body_entered" from="Messages/EntryMessage" to="Messages" method="_on_EntryMessage_body_entered"]

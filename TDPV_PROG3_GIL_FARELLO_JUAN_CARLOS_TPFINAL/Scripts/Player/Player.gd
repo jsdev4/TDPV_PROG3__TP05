@@ -33,7 +33,7 @@ export var files_availables=10
 var play_jump_sound
 var play_walking_sound
 var can_play_walking_sound
-
+var timer_for_emission
 
 func _ready():
 	flipped.y=0
@@ -45,7 +45,7 @@ func _ready():
 	timer_for_can_fire=0
 	files_converted=0
 	emit_signal("draw")
-	
+	timer_for_emission=0
 	files_availables_to_show=connect("number_of_files",get_node("../GUI/FilesAvailable"),"decrease_files_available")
 	files_availables_to_show_reload=connect("number_of_files_increase",get_node("../GUI/FilesAvailable"),"increase_files_available")
 
@@ -71,7 +71,6 @@ func _physics_process(delta):
 		$Particles2D.emitting=true
 	if hitted==false:
 		$Particles2D.emitting=false
-	
 	if lifes==0:
 		restart=get_tree().reload_current_scene()
 	
@@ -189,14 +188,16 @@ func _has_finished_the_level():
 	pass
 	
 func _set_flashing_when_hitted():
-	$Hitted.play()
+	
 	hitted=true
 	
 func quit_life():
-	hitted=false
-	lifes-=1
-	lifes_list[lifes].queue_free()
-	print (lifes)
+	$Hitted.play()
+	for i in 1:
+		hitted=false
+		lifes-=1
+		lifes_list[lifes].queue_free()
+
 
 func show_lifes():
 	for i in lifes:

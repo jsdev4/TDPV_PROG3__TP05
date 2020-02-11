@@ -11,6 +11,7 @@ func _ready():
 	can_change_level=connect("change_scene",get_node("../MainAdmin"),"change_level_if_completed")
 	cant_move=connect("no_movement_for_player",get_node("../Player"),"set_no_movement")
 	set_timer_paused=connect("timerpaused",get_node("../GUI/Time"),"set_pause_if_completed")
+
 func _on_ExitLevel_body_entered(body):
 	if body.name=="Player":
 		emit_signal("change_scene")

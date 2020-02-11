@@ -49,7 +49,7 @@ func _on_Area2D_body_entered(body):
 		rotate=false
 	if body.name=="Water":
 		queue_free()
-	if body.name=="AACFiles"||body.name=="MP3Files"|| body.name=="WavFiles"||body.name=="AIFFfiles":
+	if body.name=="AACFiles"||body.name=="MP3Files"|| body.name=="WavFiles":
 		queue_free()
 
 func _set_rotation():

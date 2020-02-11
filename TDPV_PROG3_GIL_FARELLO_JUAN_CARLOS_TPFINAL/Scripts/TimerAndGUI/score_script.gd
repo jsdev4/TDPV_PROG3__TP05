@@ -1,5 +1,6 @@
 extends RichTextLabel
 
+#if score in player is changed, it's neccessary to change here
 var score
 func _ready():
 	score=0

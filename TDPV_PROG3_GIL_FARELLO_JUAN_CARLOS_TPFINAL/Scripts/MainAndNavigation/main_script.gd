@@ -1,4 +1,11 @@
 extends Node
+
+#main admin controls if we are out of timer, if we finish the level or press pause and
+#manipulates gui nodes
+
+
+
+
 var is_outatime
 var finished
 var paused
@@ -11,6 +18,7 @@ func _ready():
 	finished=false
 	option=0
 	option2=0
+
 func _process(delta):
 	if is_outatime==true:
 		get_tree().get_nodes_in_group("TimeIsOut")[0].visible=true
@@ -28,7 +36,6 @@ func _process(delta):
 			if Input.is_action_pressed("menuDown"):
 				option=1
 				get_tree().get_nodes_in_group("MenuLabel")[0].add_color_override("font_color", Color(0.85,0.11,0.56,1))
-				
 		if option==1:
 			get_tree().get_nodes_in_group("MenuLabel")[1].add_color_override("font_color", Color(0.11,0.47,0.85,1))
 			if Input.is_action_pressed("Confirm"):
@@ -39,15 +46,14 @@ func _process(delta):
 				get_tree().get_nodes_in_group("MenuLabel")[1].add_color_override("font_color", Color(0.85,0.11,0.56,1))
 	if  finished==true:
 		get_tree().get_nodes_in_group("LevelFinished")[0].visible=true
-
-		if Input.is_action_pressed("ConfirmChangeScene"):
+		if Input.is_action_just_pressed("ConfirmChangeScene"):
+			pass
+		if Input.is_action_just_released("ConfirmChangeScene"):
 				change=get_tree().change_scene("res://Mainmenu.tscn")
 				#from here connects another scene
 	if is_outatime==false&&finished==false:
-		
 		if Input.is_action_just_pressed("Escape_to_main_menu"):
 			paused=!paused
-
 			var new_pause_state=not get_tree().paused
 			get_tree().get_nodes_in_group("BackgroundForPause")[0].visible=new_pause_state
 			get_tree().get_nodes_in_group("GameTitle")[0].visible=new_pause_state
@@ -55,11 +61,8 @@ func _process(delta):
 			get_tree().get_nodes_in_group("MenuLabel")[0].visible=new_pause_state
 			get_tree().get_nodes_in_group("MenuLabel")[1].visible=new_pause_state
 			get_tree().get_nodes_in_group("MenuLabel")[2].visible=new_pause_state
-		
 			get_tree().paused=new_pause_state
-
 		if paused==true:
-			
 			if option2==0:
 				get_tree().get_nodes_in_group("MenuLabel")[0].add_color_override("font_color", Color(0.11,0.47,0.85,1))
 			if Input.is_action_pressed("Confirm"):
@@ -76,8 +79,9 @@ func _process(delta):
 				if Input.is_action_pressed("menuUP"):
 					option2=0
 					get_tree().get_nodes_in_group("MenuLabel")[1].add_color_override("font_color", Color(0.85,0.11,0.56,1))
+
 func change_level_if_completed():
 	finished=true
-		
+
 func outatime():
 	is_outatime=true

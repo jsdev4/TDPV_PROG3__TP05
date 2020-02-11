@@ -7,13 +7,13 @@ var respawn
 var timer
 var timer_movement
 export var velocity=0
-var slide
+
 func _ready():
 	is_collected=connect("collected",get_node("../../Player"),"reloader")
 	respawn=false
 	timer=0
 	timer_movement=0
-	slide=false
+
 func _process(delta):
 	timer_movement+=delta
 	if timer_movement<0.5:
@@ -22,6 +22,7 @@ func _process(delta):
 		global_position.y-=velocity*delta
 	if timer_movement>1:
 		timer_movement=0
+		
 	if respawn==true:
 		$CollisionShape2D.disabled=true
 		$Sprite.visible=false
