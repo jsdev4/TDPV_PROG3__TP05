@@ -15,16 +15,17 @@ https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 
 icons for audio files, free use:
 https://www.kindpng.com/imgv/iboxRh_audio-files-audio-file-icon-png-transparent-png/
-
+audio converted icons
+https://www.kindpng.com/imgv/wTTTw_multimedia-player-audio-icons-png-transparent-png/
+https://www.kindpng.com/imgv/hobmmm_audio-imagenes-png-de-audio-transparent-png/
+https://commons.wikimedia.org/wiki/File:HTML5_audio_icon.svg
+https://en.wikipedia.org/wiki/GNOME_SoundConverter
 followed tutorials:
 https://www.youtube.com/playlist?list=PLdl7tDMyY4Q3dunDj0Hij7n9ofxs-c3kZ
 
 added tiled imported
 https://godotengine.org/asset-library/asset/158
 https://www.gamefromscratch.com/post/2017/07/05/Godot-Tutorial-Using-Add-Ons.aspx
-<<<<<<< Updated upstream
-https://docs.godotengine.org/en/3.1/tutorials/plugins/editor/import_plugins.html
-=======
 https://docs.godotengine.org/en/3.1/tutorials/plugins/editor/import_plugins.html
 
 fonts
@@ -37,4 +38,3 @@ https://www.sounds-resource.com/playstation/quakeii/sound/8592/
 music
 http://www.vgmpf.com/Wiki/index.php?title=MegaRace_(DOS)
 https://downloads.khinsider.com/game-soundtracks/album/quake-i-original-soundtrack
->>>>>>> Stashed changes

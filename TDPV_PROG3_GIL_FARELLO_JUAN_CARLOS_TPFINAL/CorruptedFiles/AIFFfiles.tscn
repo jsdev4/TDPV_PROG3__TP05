@@ -4,9 +4,7 @@
 [ext_resource path="res://Assets/Images/aiff_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sound/sol_idle1.wav" type="AudioStream" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Idle"
 length = 1.2
 loop = true
@@ -23,20 +21,20 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.4658, 17.7201 )
+
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 23.2881, 21.3637 )
+extents = Vector2( 28.4614, 29.685 )
 
 [node name="AIFFfiles" type="PathFollow2D"]
 position = Vector2( 5124.58, 243.377 )
 rotation = -3.13996
 script = ExtResource( 1 )
+kind_of_file = 3
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 collision/safe_margin = 5.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-shape = SubResource( 1 )
-disabled = true
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 editor/display_folded = true
@@ -48,20 +46,17 @@ frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D/Sprite"]
 autoplay = "Idle"
-anims/Idle = SubResource( 2 )
+anims/Idle = SubResource( 1 )
 
-<<<<<<< Updated upstream
-[node name="Area2D" type="Area2D" parent="KinematicBody2D"]
-priority = 1.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 4.19482, 2.38809 )
+shape = SubResource( 2 )
+disabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
-position = Vector2( 4.64502, 1.53998 )
-=======
 [node name="Area2D_especial" type="Area2D" parent="KinematicBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D_especial"]
 position = Vector2( 4.63525, 1.38231 )
->>>>>>> Stashed changes
 shape = SubResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -1,9 +1,5 @@
 extends KinematicBody2D
-<<<<<<< Updated upstream
-tool
-=======
 
->>>>>>> Stashed changes
 export(float) var GRAVITY = 400
 export(float) var WALK_FORCE =20
 export(float) var WALK_MIN_SPEED = 10
@@ -12,27 +8,23 @@ export(float) var STOP_FORCE = 800
 export(float) var JUMP_SPEED = 80 setget _set_jump_speed
 export(float) var JUMP_MAX_AIRBORNE_TIME = 0.4
 export (PackedScene)var file_converter
-<<<<<<< Updated upstream
-=======
 export (PackedScene) var lifes_to_show
 var offset_for_lifes=50
 var lifes_list=[]
 
 signal number_of_files
 signal number_of_files_increase
->>>>>>> Stashed changes
 
 var velocity = Vector2()
 var on_air_time = 1
 var jumping = false
 var jump_curve = PoolVector2Array()
 var flipped=Vector2()
-var lifes
+var original_position=Vector2()
+export var lifes=5
 var can_fire
 var timer_for_can_fire
 var hitted
-<<<<<<< Updated upstream
-=======
 var restart
 var files_converted#tested purposes on console
 var files_availables_to_show
@@ -42,22 +34,16 @@ var play_jump_sound
 var play_walking_sound
 var can_play_walking_sound
 
->>>>>>> Stashed changes
 
 func _ready():
-	lifes=1
 	flipped.y=0
 	can_fire=true
-<<<<<<< Updated upstream
-	timer_for_can_fire=0
-=======
 	play_jump_sound=false
 	play_walking_sound=0
 	can_play_walking_sound=false
 	original_position=position
 	timer_for_can_fire=0
 	files_converted=0
->>>>>>> Stashed changes
 	emit_signal("draw")
 	
 	files_availables_to_show=connect("number_of_files",get_node("../GUI/FilesAvailable"),"decrease_files_available")
@@ -67,7 +53,7 @@ func _ready():
 		jump_curve.resize(5)
 		calculate_jump_curve()
 		update()
-		
+	show_lifes()
 func _physics_process(delta):
 	if Engine.editor_hint: 
 		return
@@ -82,15 +68,6 @@ func _physics_process(delta):
 	sprite= get_node("Sprite")
 	animation=get_node("AnimationPlayer")
 	if hitted==true:
-<<<<<<< Updated upstream
-		material.set_shader_param("glow",1.0)
-	if hitted==false:
-		material.set_shader_param("glow",0.0)
-	if lifes==0:
-		get_tree().reload_current_scene()
-#	animation=get_node("AnimationPlayer")
-	sprite= get_node("Sprite")
-=======
 		$Particles2D.emitting=true
 	if hitted==false:
 		$Particles2D.emitting=false
@@ -99,7 +76,6 @@ func _physics_process(delta):
 		restart=get_tree().reload_current_scene()
 	
 	
->>>>>>> Stashed changes
 	if (walk_left):
 		stop = false
 		flipped.x=-10
@@ -126,28 +102,6 @@ func _physics_process(delta):
 		if (vlen < 0):
 			vlen = 0
 		velocity.x = vlen*vsign
-<<<<<<< Updated upstream
-		#animation.play("Idle")
-		#if(Input.is_action_pressed("numpad01")):
-		#	color_to_change=Color(0.35,0.82,0.3,1.0)
-		#if(Input.is_action_pressed("numpad02")):
-		#	color_to_change=Color(0.97, 0.45, 0.32, 1.0)
-		#if(Input.is_action_pressed("numpad03")):
-		#	color_to_change=Color(0.18, 0.18, 0.85, 1.0)
-		#if(Input.is_action_pressed("numpad0")):
-		#	color_to_change=Color(1,1,1,1)
-		#if(Input.is_action_pressed("megabooster")):
-		#	material.set_shader_param("glow",1.0)
-		#elif(Input.is_action_just_released("megabooster")):
-		#	material.set_shader_param("glow",0.0)
-	#material.set_shader_param("received_color",color_to_change)
-	#if(hide):
-	#	timer_for_hide+=delta
-	#	emit_signal("is_hiding")
-	if can_fire==true:
-		if fire&&sprite.flip_h==false:
-			
-=======
 		can_play_walking_sound=false
 		animation.play("Idle")
 
@@ -155,47 +109,37 @@ func _physics_process(delta):
 		if fire&&sprite.flip_h==false:
 			files_availables-=1
 			decrease_files_availables()
->>>>>>> Stashed changes
 			var new_file_converter=file_converter.instance()
 			new_file_converter.set_position(get_node("Position2D").global_position)
 			new_file_converter.velocity.y=new_file_converter.potency*-sin(70)
 			new_file_converter.velocity.x=new_file_converter.potency*cos(70)
 			get_tree().get_nodes_in_group("Main")[0].add_child(new_file_converter)
+			new_file_converter.set_tipe_of_converter()
 			can_fire=false
 			new_file_converter._set_rotation()
 			new_file_converter._set_direction_for_rotation(true)
 			$FireSound.play()
 		elif fire&&sprite.flip_h==true:
-<<<<<<< Updated upstream
-=======
 			files_availables-=1
 			decrease_files_availables()
->>>>>>> Stashed changes
 			var new_file_converter=file_converter.instance()
 			new_file_converter.set_position(get_node("Position2D2").global_position)
 			new_file_converter.velocity.y=new_file_converter.potency*-sin(70)
 			new_file_converter.velocity.x=(new_file_converter.potency*cos(70))*-1
 			get_tree().get_nodes_in_group("Main")[0].add_child(new_file_converter)
+			new_file_converter.set_tipe_of_converter()
 			new_file_converter._set_rotation()
 			new_file_converter._set_direction_for_rotation(false)
 			can_fire=false
-<<<<<<< Updated upstream
-	if can_fire==false:
-		
-=======
 			$FireSound.play()
 	if can_fire==false&&files_availables>0:
->>>>>>> Stashed changes
 		timer_for_can_fire+=delta
 		if timer_for_can_fire>1:
 			timer_for_can_fire=0
 			can_fire=true
-<<<<<<< Updated upstream
-=======
 	if files_availables==0:
 		if (fire):
 			$NoFireSound.play()
->>>>>>> Stashed changes
 	get_node("Sprite").update()
 	velocity += force*delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
@@ -237,24 +181,19 @@ func _set_jump_speed(js):
 	
 	
 func _respawn():
-	get_tree().reload_current_scene()
+	quit_life()
+	position=get_node("../PointForRespawn").position
+	
 func _has_finished_the_level():
-<<<<<<< Updated upstream
-	get_tree().reload_current_scene()
-=======
 	
 	pass
 	
->>>>>>> Stashed changes
 func _set_flashing_when_hitted():
 	$Hitted.play()
 	hitted=true
 	
-func _set_not_flashing_when_leave_it():
+func quit_life():
 	hitted=false
-<<<<<<< Updated upstream
-#poner emit signal cuando dejas de tocarlo emitir señal de quitar life
-=======
 	lifes-=1
 	lifes_list[lifes].queue_free()
 	print (lifes)
@@ -290,4 +229,3 @@ func increase_files_availables():
 func set_no_movement():
 	WALK_FORCE=0
 	WALK_MAX_SPEED=0
->>>>>>> Stashed changes

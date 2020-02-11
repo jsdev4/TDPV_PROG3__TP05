@@ -28,11 +28,12 @@ func _process(delta):
 			if Input.is_action_pressed("menuDown"):
 				option=1
 				get_tree().get_nodes_in_group("MenuLabel")[0].add_color_override("font_color", Color(0.85,0.11,0.56,1))
+				
 		if option==1:
 			get_tree().get_nodes_in_group("MenuLabel")[1].add_color_override("font_color", Color(0.11,0.47,0.85,1))
 			if Input.is_action_pressed("Confirm"):
-				pass
-				#from here back to main menu#
+				change=get_tree().change_scene("res://Mainmenu.tscn")
+				get_tree().paused=false
 			if Input.is_action_pressed("menuUP"):
 				option=0
 				get_tree().get_nodes_in_group("MenuLabel")[1].add_color_override("font_color", Color(0.85,0.11,0.56,1))
@@ -41,7 +42,7 @@ func _process(delta):
 
 		if Input.is_action_pressed("ConfirmChangeScene"):
 				change=get_tree().change_scene("res://Mainmenu.tscn")
-			#from here connects another scene
+				#from here connects another scene
 	if is_outatime==false&&finished==false:
 		
 		if Input.is_action_just_pressed("Escape_to_main_menu"):
